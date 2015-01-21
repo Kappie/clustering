@@ -10,8 +10,8 @@ require "ai4r"
 # Debugging library.
 require "byebug"
 
-module Cluster
-  class Clusterer
+module Clustering
+  class Cluster
     # 1 (worst) .. 9 (best)
     COMPRESSION_LEVEL = 6
     NUMBER_OF_CLUSTERS = 10
@@ -54,6 +54,13 @@ module Cluster
 
     def compressed_size(string)
       Zlib::Deflate.deflate(string, COMPRESSION_LEVEL).size
+    end
+  end
+  
+  class Clusterer
+    def initialize(distance_matrix:, labels: [])
+      @distance_matrix = distance_matrix
+      @labels = labels
     end
   end
 
