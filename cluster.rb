@@ -1,8 +1,7 @@
 # I attempt to cluster string data by compression, as in the paper 'Clustering by Compression'
 # by R. Cilibrasi and P. Vitanyi.
 #
-# I use the open source zlib library for compression, ai4r (AI for Ruby) library for clustering
-# and datasets.
+# I use the open source zlib library for compression.
 
 require "zlib"
 require "ai4r"
