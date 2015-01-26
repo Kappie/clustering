@@ -20,6 +20,13 @@ describe "QuartetTree" do
     @n1 = @n0 << Clustering::QuartetTree.new("n1") 
     @n1 << @leaf3
     @n1 << @leaf4
+
+    @sample_input = {
+      "Tangled Up In Blue" => "0010101010100000",
+      "You're A Big Girl Now" => "010101010101010",
+      "Buckets Of Rain" => "1110110101011101",
+      "Shelter From The Storm" => "010101011111010101"
+    }
   end
 
   it "knows that 12|34 is consistent" do
@@ -43,20 +50,20 @@ describe "QuartetTree" do
     end
   end
 
-  it "should calculate some kind of normalized benefit score" do
-    input = {
-      "Tangled Up In Blue" => "0010101010100000",
-      "You're A Big Girl Now" => "010101010101010",
-      "Buckets Of Rain" => "1110110101011101",
-      "Shelter From The Storm" => "010101011111010101"
-    }
-    tree = Clustering::QuartetTree.random_tree(input)
-    expect(tree.normalized_benefit_score).to be >= 0.0
+  it "always has a normalized benefit score between 0 and 1" do
+    10.times do
+      tree = Clustering::QuartetTree.random_tree(random_set)
+      expect(tree.normalized_benefit_score).to be >= 0.0
+      expect(tree.normalized_benefit_score).to be <= 1.0
+    end
   end
-
 end
 
 def random_set
   length = 4 + rand(6)
-  (0 .. length).map { |x| "item #{x}" }
+  (0 .. length).map { |x| ["item #{x}", random_binary_string] }.to_h
+end
+
+def random_binary_string
+  (0 .. rand(50)).map { rand < 0.5 ? "0" : "1" }.join
 end
