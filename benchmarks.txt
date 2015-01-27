@@ -4,3 +4,9 @@ tree of six items:
 tree of ten items:
  43.290000   0.080000  43.370000 ( 43.391699)
 
+Printed on 27 Jan at 03:05PM
+tree of six items:
+  1.010000   0.000000   1.010000 (  1.022023)
+tree of ten items:
+  3.150000   0.020000   3.170000 (  3.166132)
+

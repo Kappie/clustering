@@ -83,6 +83,23 @@ module Clustering
       (sum_of_maximal_costs - total_tree_cost) / (sum_of_maximal_costs - sum_of_minimal_costs)
     end
 
+    # Hash of hashes of the normalized compression distances between files, like so:
+    # { 
+    #   "file1" => { "file1" => 1.0, "file2" => 0.68, ... },
+    #   "file2" => { "file1" => 0.68", "file2" => 1.0, ...},
+    #   ...
+    # }
+    # 
+    # It is only calculated once.
+    def distance_matrix
+      @distance_matrix = @distance_matrix || each_leaf.each_with_object({}) do |row_leaf, matrix|
+        matrix_row = each_leaf.each_with_object({}) do |col_leaf, row|
+          row[col_leaf.name] = normalized_compression_distance(row_leaf.content, col_leaf.content)
+        end
+        matrix[row_leaf.name] = matrix_row
+      end
+    end
+
     # A sequence of at least one but potentially many simple mutations, picked according to
     # the following distribution. First we pick the number k of simple mutations
     # (random leaf swap, random subtree swap or random subtree transfer) that we will
@@ -116,9 +133,9 @@ module Clustering
     end
 
     def cost(topology)
-      first_pair  = topology.first.map { |leaf| leaf.content }
-      second_pair = topology.last.map  { |leaf| leaf.content }
-      normalized_compression_distance(*first_pair) + normalized_compression_distance(*second_pair)
+      a, b  = topology.first.map { |leaf| leaf.name }
+      c, d  = topology.last.map  { |leaf| leaf.name }
+      distance_matrix[a][b] + distance_matrix[c][d]
     end
 
     # Gives the three possible topologies for every combination of four labels
@@ -188,7 +205,7 @@ class Tree::TreeNode
     old_a = a.detached_copy; old_b = b.detached_copy
     parent_a = a.parent; parent_b = b.parent
 
-    # If parents are the same, method below throws an error. So we do not swap at all.
+    # If parents are the same, TreeNode#add throws an error. So we do not swap at all.
     return a if parent_a == parent_b
 
     # After this, a is parentless and b has a's parent.
