@@ -33,18 +33,6 @@ module Clustering
       end << leaves.next ).root
     end
 
-    # Exactly one topology for a given group of four is consistent with any given tree.
-    # This method returns the consistent topology, e.g. [[1, 2], [3, 4]],
-    # meaning 12|34.
-    def consistent_topology(group_of_four)
-      topologies(group_of_four).detect { |topology| consistent_with?(topology) }
-    end
-
-    def consistent_with?(topology)
-      # & is set intersection.
-      ( nodes_passed(*topology.first) & nodes_passed(*topology.last) ).empty?
-    end
-
     # (M - C{T}) / (M - m)
     def normalized_benefit_score
       sum_of_maximal_costs = 0
@@ -61,6 +49,35 @@ module Clustering
       end
 
       (sum_of_maximal_costs - total_tree_cost) / (sum_of_maximal_costs - sum_of_minimal_costs)
+    end
+
+    # A sequence of at least one but potentially many simple mutations, picked according to
+    # the following distribution. First we pick the number k of simple mutations
+    # (random leaf swap, random subtree swap or random subtree transfer) that we will
+    # perform with probability 2^{-k}. For each such simple mutation, we choose randomly
+    # between the three types.
+    def mutation
+    end
+
+    def random_leaf_swap
+    end
+
+    def random_subtree_swap
+    end
+
+    def random_subtree_transfer
+    end
+
+    # Exactly one topology for a given group of four is consistent with any given tree.
+    # This method returns the consistent topology, e.g. [[1, 2], [3, 4]],
+    # meaning 12|34.
+    def consistent_topology(group_of_four)
+      topologies(group_of_four).detect { |topology| consistent_with?(topology) }
+    end
+
+    def consistent_with?(topology)
+      # & is set intersection.
+      ( nodes_passed(*topology.first) & nodes_passed(*topology.last) ).empty?
     end
 
     def cost(topology)
