@@ -59,6 +59,30 @@ describe "QuartetTree" do
   end
 end
 
+describe "Tree::TreeNode" do
+  before(:each) do
+    @root = Tree::TreeNode.new("root")
+    @internal_node = Tree::TreeNode.new("internal node")
+    @leaf1 = Tree::TreeNode.new("leaf 1")
+    @leaf2 = Tree::TreeNode.new("leaf 2")
+    @leaf3 = Tree::TreeNode.new("leaf 3")
+    @leaf4 = Tree::TreeNode.new("leaf 4")
+
+    @root << @internal_node
+    @root << @leaf1
+    @root << @leaf2
+
+    @internal_node << @leaf3
+    @internal_node << @leaf4
+  end
+
+  it "swaps leaves" do
+    @root.swap_leaves(@leaf1, @leaf3)
+    expect(@root[1].name).to eq "leaf 3"
+    expect(@internal_node[0].name).to eq "leaf 1"
+  end
+end
+
 def random_set
   length = 4 + rand(6)
   (0 .. length).map { |x| ["item #{x}", random_binary_string] }.to_h

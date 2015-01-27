@@ -8,6 +8,16 @@ require "byebug"
 module Clustering
   class QuartetTree < Tree::TreeNode
     COMPRESSION_LEVEL = 6
+    NUMBER_OF_ATTEMPTS = 20
+
+    def self.from_directory(dir_path)
+      file_paths = Dir["#{dir_path}/*"]
+      set = file_paths.each_with_object({}) do |path, result|
+        result[ File.basename(path, ".txt") ] = File.read(path)
+      end
+
+      random_tree(set)
+    end
 
     # Construct tree with n leaf nodes, containing the n items, and
     # n - 2 internal nodes, labeled with a_{0} through a_{n-3}.
@@ -33,6 +43,28 @@ module Clustering
       end << leaves.next ).root
     end
 
+    # The clustering algorithm. Perform random permutations until a better
+    # normalized benefit score cannot be found in a reasonable amount of time.
+    def maximize_benefit_score
+      best_score = normalized_benefit_score
+
+      attempts = 0
+
+      while attempts < NUMBER_OF_ATTEMPTS
+        perform_mutation
+        new_score = normalized_benefit_score
+        if new_score > best_score
+          best_score = new_score
+          puts "new best score: #{best_score}."
+          attempts = 0
+        else
+          attempts += 1
+        end
+      end
+
+      self
+    end
+
     # (M - C{T}) / (M - m)
     def normalized_benefit_score
       sum_of_maximal_costs = 0
@@ -56,10 +88,13 @@ module Clustering
     # (random leaf swap, random subtree swap or random subtree transfer) that we will
     # perform with probability 2^{-k}. For each such simple mutation, we choose randomly
     # between the three types.
-    def mutation
+    def perform_mutation
+      3.times { random_leaf_swap } 
     end
 
     def random_leaf_swap
+      a, b = each_leaf.sample(2)
+      swap_leaves(a, b)
     end
 
     def random_subtree_swap
@@ -129,5 +164,36 @@ module Clustering
       boundary_nodes = [ parent_name(a)[-1].to_i, parent_name(b)[-1].to_i ].sort
       (boundary_nodes.first .. boundary_nodes.last).to_a
     end
+  end
+end
+
+class Tree::TreeNode
+  # This method is in the documentation somehow, but not in the gem source code.
+  def replace!(old_child, new_child)
+    child_index = @children.find_index(old_child)
+
+    old_child = remove! old_child
+    add new_child, child_index
+
+    old_child
+  end
+
+  # This method is in the documentation somehow, but not in the gem source code.
+  def replace_with(node)
+    @parent.replace!(self, node)
+  end
+
+  # Convenience methods
+  def swap_leaves(a, b)
+    old_a = a.detached_copy; old_b = b.detached_copy
+    parent_a = a.parent; parent_b = b.parent
+
+    # If parents are the same, method below throws an error. So we do not swap at all.
+    return a if parent_a == parent_b
+
+    # After this, a is parentless and b has a's parent.
+    a.replace_with(b) 
+
+    parent_b.replace!(old_b, old_a)
   end
 end

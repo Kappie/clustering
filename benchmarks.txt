@@ -1,0 +1,6 @@
+Printed on 27 Jan at 02:11PM
+tree of six items:
+  3.580000   0.020000   3.600000 (  3.613698)
+tree of ten items:
+ 43.290000   0.080000  43.370000 ( 43.391699)
+
