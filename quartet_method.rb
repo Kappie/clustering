@@ -30,13 +30,13 @@ module Clustering
     # }
     def self.random_tree(set)
       # Allows me to call leaves.next to add leaves in random order
-      leaves = set.to_a.shuffle.map { |label, content| QuartetTree.new(label, content) }.each
-      first_node = QuartetTree.new("n0")
+      leaves = set.to_a.shuffle.map { |label, content| self.new(label, content) }.each
+      first_node = self.new("n0")
       # First node gets two leaves.
       first_node.add(leaves.next); first_node.add(leaves.next)
 
       random_tree = ( (1..set.size - 3).reduce(first_node) do |tree, i|
-        node = QuartetTree.new("n#{i}")
+        node = self.new("n#{i}")
         node.add(leaves.next)
         tree << node
       # last node gets an extra leaf: has two in total.
@@ -98,7 +98,7 @@ module Clustering
     def distance_matrix
       @distance_matrix = @distance_matrix || each_leaf.each_with_object({}) do |row_leaf, matrix|
         matrix_row = each_leaf.each_with_object({}) do |col_leaf, row|
-          row[col_leaf.name] = normalized_compression_distance(row_leaf.content, col_leaf.content)
+          row[col_leaf.name] = normalized_compression_distance(row_leaf, col_leaf)
         end
         matrix[row_leaf.name] = matrix_row
       end
@@ -162,6 +162,7 @@ module Clustering
     end
 
     def normalized_compression_distance(a, b)
+      a = a.content; b = b.content
       compressed_sizes = [ compressed_size(a), compressed_size(b) ]
       ( compressed_size(a + b) - compressed_sizes.min ).to_f / compressed_sizes.max
     end

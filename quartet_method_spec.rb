@@ -5,6 +5,7 @@
 # I will have to think of a way of testing those things.
 
 require_relative "quartet_method"
+require_relative "test_quartet_tree"
 
 describe "QuartetTree" do
   before(:each) do
@@ -61,6 +62,19 @@ describe "QuartetTree" do
   it "returns a QuartetTree when doing a detached copy" do
     expect(@n0.detached_subtree_copy.class).to eq Clustering::QuartetTree
   end
+
+  # See page 11 of the Clustering by Compression paper.
+  it "correctly clusters a tree with a trivial distance metric" do
+    NUMBER_OF_ITEMS = 7
+    gauge_tree = TestQuartetTree.random(NUMBER_OF_ITEMS)
+    test_tree = TestQuartetTree.random(NUMBER_OF_ITEMS)
+    test_tree.distance_matrix = gauge_tree.distance_matrix
+    expect(test_tree.normalized_benefit_score).to be < 1.0
+
+    optimized_tree = test_tree.maximize_benefit_score
+    optimized_tree.distance_matrix = gauge_tree.distance_matrix
+    expect(optimized_tree.normalized_benefit_score).to eq 1.0
+  end
 end
 
 describe "Tree::TreeNode" do
@@ -96,7 +110,3 @@ def random_binary_string
   (0 .. rand(50)).map { rand < 0.5 ? "0" : "1" }.join
 end
 
-# Quartet tree with a trivial distance metrix, to test the clustering algorithm,
-# as in the page 11 of the Clustering by Compression paper.
-class QuartetTreeTest < Clustering::QuartetTree
-end
