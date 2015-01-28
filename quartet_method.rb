@@ -8,7 +8,7 @@ require "byebug"
 module Clustering
   class QuartetTree < Tree::TreeNode
     COMPRESSION_LEVEL = 6
-    NUMBER_OF_ATTEMPTS = 20
+    MAX_NUMBER_OF_ATTEMPTS = 1000
 
     def self.from_directory(dir_path)
       file_paths = Dir["#{dir_path}/*"]
@@ -19,8 +19,8 @@ module Clustering
       random_tree(set)
     end
 
-    # Construct tree with n leaf nodes, containing the n items, and
-    # n - 2 internal nodes, labeled with a_{0} through a_{n-3}.
+    # Construct tree with n leaf nodes, containing the a items, and
+    # a - 2 internal nodes, labeled with n{0} through n{a-3}.
     # Accepts a hash with labels as keys and contents as values, as in:
     #
     # set = {
@@ -44,17 +44,19 @@ module Clustering
     end
 
     # The clustering algorithm. Perform random permutations until a better
-    # normalized benefit score cannot be found in a reasonable amount of time.
+    # normalized benefit score cannot be found in a reasonable amount of attempts.
     def maximize_benefit_score
       best_score = normalized_benefit_score
+      best_tree = detached_subtree_copy
 
       attempts = 0
 
-      while attempts < NUMBER_OF_ATTEMPTS
+      while attempts < MAX_NUMBER_OF_ATTEMPTS
         perform_mutation
         new_score = normalized_benefit_score
         if new_score > best_score
           best_score = new_score
+          best_tree = detached_subtree_copy
           puts "new best score: #{best_score}."
           attempts = 0
         else
@@ -62,11 +64,13 @@ module Clustering
         end
       end
 
-      self
+      best_tree
     end
 
     # (M - C{T}) / (M - m)
     def normalized_benefit_score
+      # I calculate sum of maximal costs (M) and sum of minimal costs (m) every time now. 
+      # Very naive, M and m should be cached.
       sum_of_maximal_costs = 0
       sum_of_minimal_costs = 0
       total_tree_cost = 0
@@ -75,7 +79,7 @@ module Clustering
         costs = costs_of_topologies(group_of_four)
         sum_of_maximal_costs += costs.max
         sum_of_minimal_costs += costs.min
-        
+
         # I calculate the cost twice now. Not so nice.
         total_tree_cost += cost( consistent_topology(group_of_four) )
       end
@@ -124,7 +128,9 @@ module Clustering
     # This method returns the consistent topology, e.g. [[1, 2], [3, 4]],
     # meaning 12|34.
     def consistent_topology(group_of_four)
-      topologies(group_of_four).detect { |topology| consistent_with?(topology) }
+      result = topologies(group_of_four).detect { |topology| consistent_with?(topology) }
+      byebug if result.nil?
+      result
     end
 
     def consistent_with?(topology)
@@ -138,7 +144,6 @@ module Clustering
       distance_matrix[a][b] + distance_matrix[c][d]
     end
 
-    # Gives the three possible topologies for every combination of four labels
     def groups_of_four
       each_leaf.combination(4)
     end
@@ -156,8 +161,6 @@ module Clustering
       topologies(group_of_four).map { |topology| cost(topology) }
     end
 
-    private
-
     def normalized_compression_distance(a, b)
       compressed_sizes = [ compressed_size(a), compressed_size(b) ]
       ( compressed_size(a + b) - compressed_sizes.min ).to_f / compressed_sizes.max
@@ -171,15 +174,15 @@ module Clustering
       find { |node| node.name == name }
     end
 
-    def parent_name(item)
-      item.parent.name
-    end
-
     # Gives the numbers of the internal nodes (n0, n1, ...) that must be
     # passed to travel from item a to item b.
     def nodes_passed(a, b)
-      boundary_nodes = [ parent_name(a)[-1].to_i, parent_name(b)[-1].to_i ].sort
+      boundary_nodes = [ internal_node_number(a), internal_node_number(b) ].sort
       (boundary_nodes.first .. boundary_nodes.last).to_a
+    end
+
+    def internal_node_number(leaf)
+      leaf.parent.name.match(/n(\d+)/).captures.first.to_i
     end
   end
 end
@@ -212,5 +215,11 @@ class Tree::TreeNode
     a.replace_with(b) 
 
     parent_b.replace!(old_b, old_a)
+  end
+
+  # I monkey patch detached_copy and detached_subtree_copy because I want QuartetTree objects
+  # when I send these methods to a QuartetTree.
+  def detached_copy
+    self.class.new(@name, @content ? @content.clone : nil)
   end
 end

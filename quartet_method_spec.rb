@@ -57,6 +57,10 @@ describe "QuartetTree" do
       expect(tree.normalized_benefit_score).to be <= 1.0
     end
   end
+
+  it "returns a QuartetTree when doing a detached copy" do
+    expect(@n0.detached_subtree_copy.class).to eq Clustering::QuartetTree
+  end
 end
 
 describe "Tree::TreeNode" do
@@ -90,4 +94,9 @@ end
 
 def random_binary_string
   (0 .. rand(50)).map { rand < 0.5 ? "0" : "1" }.join
+end
+
+# Quartet tree with a trivial distance metrix, to test the clustering algorithm,
+# as in the page 11 of the Clustering by Compression paper.
+class QuartetTreeTest < Clustering::QuartetTree
 end
