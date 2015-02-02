@@ -8,7 +8,7 @@ require "byebug"
 module Clustering
   class QuartetTree < Tree::TreeNode
     COMPRESSION_LEVEL = 6
-    MAX_NUMBER_OF_ATTEMPTS = 1000
+    MAX_NUMBER_OF_ATTEMPTS = 2000
 
     def self.from_directory(dir_path)
       file_paths = Dir["#{dir_path}/*"]
