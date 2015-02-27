@@ -19,15 +19,16 @@ module Clustering
       random_tree(set)
     end
 
-    # Construct tree with n leaf nodes, containing the a items, and
+    # Construct tree with a leaf nodes, containing the a items, and
     # a - 2 internal nodes, labeled with n{0} through n{a-3}.
-    # Accepts a hash with labels as keys and contents as values, as in:
+    # Accepts a distance matrix as input, as in:
     #
-    # set = {
-    #   "Tangled Up In Blue" => "010100011111010...",
-    #   "You're a Big Girl Now" => "01010101010000...",
-    #   "If You See Her, Say Hello" => "01010100..."
+    # { 
+    #   "file1" => { "file1" => 1.0, "file2" => 0.68, ... },
+    #   "file2" => { "file1" => 0.68", "file2" => 1.0, ...},
+    #   ...
     # }
+    # TODO: implement this with distance matrix!!
     def self.random_tree(set)
       # Allows me to call leaves.next to add leaves in random order
       leaves = set.to_a.shuffle.map { |label, content| self.new(label, content) }.each
@@ -128,9 +129,7 @@ module Clustering
     # This method returns the consistent topology, e.g. [[1, 2], [3, 4]],
     # meaning 12|34.
     def consistent_topology(group_of_four)
-      result = topologies(group_of_four).detect { |topology| consistent_with?(topology) }
-      byebug if result.nil?
-      result
+      topologies(group_of_four).detect { |topology| consistent_with?(topology) }
     end
 
     def consistent_with?(topology)
