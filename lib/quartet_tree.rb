@@ -4,7 +4,7 @@ require 'byebug'
 
 module Clustering
   class QuartetTree
-    MAX_NUMBER_OF_ATTEMPTS = 2000
+    MAX_NUMBER_OF_ATTEMPTS = 20000
 
     attr_reader :tree
  
