@@ -34,7 +34,7 @@ module Clustering
         end
       end
 
-      @tree
+      @tree = best_tree
     end
 
     private
@@ -86,12 +86,14 @@ module Clustering
     end
 
     def random_leaf_swap
-      byebug
       a, b = @tree.each_leaf.sample(2)
       @tree.swap_leaves(a, b)
     end
 
     def random_subtree_swap
+      internal_nodes = @tree.reject(&:is_leaf?)
+      a, b = internal_nodes.sample(2)
+      @tree.swap_subtrees(a, b)
     end
 
     def random_subtree_transfer
@@ -156,6 +158,9 @@ class Tree::TreeNode
     # After this, a is parentless and b has a's parent.
     a.replace_with(b) 
 
-    parent_b.replace!(old_b, old_a)
+    parent_b.add(old_a, 0)
+  end
+
+  def swap_subtrees(a, b)
   end
 end

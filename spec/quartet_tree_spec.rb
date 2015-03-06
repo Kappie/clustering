@@ -25,9 +25,7 @@ describe Clustering::QuartetTree do
 
     test_tree = Clustering::QuartetTree.new(distances) 
 
-    test_tree.maximize_benefit_score
-
-    test_tree.tree.print_tree
+    test_tree.maximize_benefit_score.print_tree
     @gauge_tree.tree.print_tree
   end
 end
