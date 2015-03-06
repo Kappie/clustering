@@ -9,6 +9,7 @@ module Clustering
  
     # @param distance_matrix [DistanceMatrix]
     def initialize(distance_matrix)
+      raise Exception "Can't cluster fewer than 4 items." if distance_matrix.size < 4
       @distance_matrix = distance_matrix
       @tree = create_random_tree
     end
