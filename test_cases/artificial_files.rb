@@ -23,7 +23,7 @@ tags = ("a".."e").each_with_object({}) do |letter, hash|
   hash[letter] = random_kilobyte
 end
 
-["a", "b", "c", "ab", "ac", "bc", "abc"].each do |identifier|
+["a", "b", "c", "ab", "ac", "ad", "bc", "abc", "acd", "abcd"].each do |identifier|
   file = random_file
   identifier.each_char do |letter|
     overwrite_random_kilobytes(file, tags[letter])

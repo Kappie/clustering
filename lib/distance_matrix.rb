@@ -18,6 +18,22 @@ module Clustering
       calculate_distances
     end
 
+    # @param path
+    #   Location to which distance matrix will be written.
+    def to_file(path)
+      File.open(path, "w") do |file|
+        @distances.each do |label_x, row|
+          file.write(label_x)
+          file.write(" ")
+          row.each do |label_y, distance|
+            file.write(distance)
+            file.write(" ")
+          end
+          file.puts
+        end 
+      end
+    end
+
     private
 
     def calculate_distances

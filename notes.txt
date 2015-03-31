@@ -1,0 +1,4 @@
+optimize distance_matrix ... only needs to be triangle matrix?
+
+A
+cache web results

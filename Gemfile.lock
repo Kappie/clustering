@@ -30,6 +30,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    ruby-web-search (0.0.2)
+      json
     slop (3.6.0)
     structured_warnings (0.2.0)
     yard (0.8.7.6)
@@ -40,5 +42,6 @@ PLATFORMS
 DEPENDENCIES
   byebug
   rspec
+  ruby-web-search
   rubytree!
   yard
