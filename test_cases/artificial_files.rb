@@ -12,21 +12,23 @@ def random_file
 end
 
 def overwrite_random_kilobytes(file, kilobyte)
-  10.times do 
-    index = rand(FILE_SIZE)
+  indices = (0 ... FILE_SIZE).to_a.sample(10)
+  indices.each do |index|
     file[index * 1000 ... (index + 1) * 1000] = kilobyte
   end
   file
 end
 
-tags = ("a".."e").each_with_object({}) do |letter, hash|
+tags = ("a".."g").each_with_object({}) do |letter, hash|
   hash[letter] = random_kilobyte
 end
 
-["a", "b", "c", "ab", "ac", "ad", "bc", "abc", "acd", "abcd"].each do |identifier|
+words = ["a", "b", "c", "ab", "ac", "bc", "abc"]
+
+words.each do |word|
   file = random_file
-  identifier.each_char do |letter|
+  word.each_char do |letter|
     overwrite_random_kilobytes(file, tags[letter])
   end
-  File.write("test_cases/artificial_files/#{identifier}", file)
+  File.write("test_files/artificial_files_2/#{word}.txt", file)
 end

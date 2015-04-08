@@ -8,6 +8,16 @@ module Clustering
   class DistanceMatrix
     attr_reader :distances
 
+    def self.from_dir(path, distance_function)
+      paths = Dir["#{path}/*"]
+      objects = paths.each_with_object({}) do |path, result|
+        label = File.basename(path, ".txt")
+        result[label] = File.read(path)
+      end
+
+      new(objects, distance_function)
+    end
+
     # @param objects [Hash]
     #   A hash with symbols (labels of the objects) and objects.
     # @param distance_function [Proc]
@@ -33,6 +43,7 @@ module Clustering
         end 
       end
     end
+
 
     private
 

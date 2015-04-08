@@ -16,6 +16,8 @@ GEM
     columnize (0.9.0)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    ffi (1.9.6)
+    io-like (0.3.0)
     json (1.8.2)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
@@ -32,6 +34,9 @@ GEM
     rspec-support (3.2.2)
     ruby-web-search (0.0.2)
       json
+    ruby-xz (0.2.1)
+      ffi
+      io-like
     slop (3.6.0)
     structured_warnings (0.2.0)
     yard (0.8.7.6)
@@ -43,5 +48,6 @@ DEPENDENCIES
   byebug
   rspec
   ruby-web-search
+  ruby-xz
   rubytree!
   yard

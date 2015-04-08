@@ -1,4 +1,18 @@
-optimize distance_matrix ... only needs to be triangle matrix?
+Essentieel:
 
-A
-cache web results
+Begrijpen Ward's method (en andere clustermethoden) en validatie.
+Waarom gebruikt Vitanyi de kwartetmethode?
+
+Volgende hoofdrichting: reproduceren multiset approach.
+
+
+Misschien:
+
+Validatie: welke compressietechniek? Diagonals dicht bij 0 krijgen.
+
+
+
+Heel misschien:
+
+Boek Kolmogorov complexity doorwerken.
+

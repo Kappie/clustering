@@ -1,4 +1,5 @@
 require "zlib"
+require "xz"
 
 module Clustering
   module DistanceFunctions
@@ -16,7 +17,7 @@ module Clustering
     private
 
     def compressed_size(string)
-      Zlib::Deflate.deflate(string).size
+      XZ.compress(string, compression_level = 9, check = :none, extreme = true).size
     end
   end
 end
