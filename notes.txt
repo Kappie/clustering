@@ -10,6 +10,9 @@ Misschien:
 
 Validatie: welke compressietechniek? Diagonals dicht bij 0 krijgen.
 
+Heel stuk schrijven over validatie clustermethode, (in het geval van muziek): hoe naar bytestring? Het probleem van "feature free": is het wel feature free, als je moet bepalen hoe een object naar bitstring geconverteerd moet worden? Misschien verschillende methoden om muziek te converteren toepassen en kijken wat er gebeurt?
+
+Proof of concept spam filter, als voorbeeld van classificatie?
 
 
 Heel misschien:
