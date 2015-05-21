@@ -3,7 +3,7 @@ require_relative "lib/distance_matrix"
 require_relative "lib/multiset"
 
 PREFIX = "test_files"
-DIR_NAME = "24-mammals-2bit"
+DIR_NAME = "24-mammals-double-characters"
 
 location = File.join(PREFIX, DIR_NAME)
 
