@@ -16,6 +16,12 @@ def random_kilobyte
   # 1000.times.map { rand(36).to_s(36) }.join
 
   SecureRandom.random_bytes(1000)
+  #
+
+  #
+  #SecureRandom.hex(500)
+
+  #1000.times.map { rand(2).to_s }.join
 end
 
 def random_file
@@ -34,19 +40,17 @@ tags = ("a".."k").each_with_object({}) do |letter, hash|
   hash[letter] = random_kilobyte
 end
 
-words = ["abc", "abcd", "abce", "abe", "ab", "acfg", "abfg", "abhi", "abhj", "ac", "a", "c", "e", "jk", "hijk", "ij", "j", "i", "f", "h", "g", "d"]
+#words = ["abc", "abcd", "abce", "abe", "ab", "acfg", "abfg", "abhi", "abhj", "ac", "a", "c", "e", "jk", "hijk", "ij", "j", "i", "f", "h", "g", "d"]
+words = ["a", "b", "c", "ab", "ac", "bc", "abc"]
 
-#words.each do |word|
-  #file = random_file
-  #word.each_char do |letter|
-    #overwrite_random_kilobytes(file, tags[letter])
-  #end
-  #File.write("test_files/artificial_files_rudi/#{word}.txt", file)
-#end
-
-34.times do |index|
-  File.write("test_files/random_files/file#{index}.txt", random_file)
+words.each do |word|
+  file = random_file
+  word.each_char do |letter|
+    overwrite_random_kilobytes(file, tags[letter])
+  end
+  File.write("test_files/7-artificial-files/#{word}", file)
 end
 
-
-
+#34.times do |index|
+  #File.write("test_files/random_files/file#{index}.txt", random_file)
+#end
