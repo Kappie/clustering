@@ -1,0 +1,597 @@
+g77 -g -c -I/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc -I/afs/fnal.gov/files/code/e875/general/ups/prd/PYTHIA6/Linux2.4-GCC_3_4/v6_406/src/inc   -DLINUX -fno-second-underscore -ffortran-bounds-check -fPIC -Wall -O -o all_subs_pre_daikon_7.o all_subs_pre_daikon_7.F > all_subs_pre_daikon_7.g77.log 2>&1
+==================
+all_subs_pre_daikon_7.F: In subroutine `get_outvals':
+In file included from all_subs_pre_daikon_7.F:45:
+all_subs_pre_daikon_7.F:224: warning: unused variable 'val_in_'
+all_subs_pre_daikon_7.F:223: warning: unused variable 'kvid_out_'
+all_subs_pre_daikon_7.F:223: warning: unused variable 'kvid_in_'
+all_subs_pre_daikon_7.F:221: warning: unused variable 'kvid2'
+all_subs_pre_daikon_7.F:221: warning: unused variable 'kvid'
+all_subs_pre_daikon_7.F:220: warning: unused variable 'kv2'
+all_subs_pre_daikon_7.F:220: warning: unused variable 'kv'
+all_subs_pre_daikon_7.F: In subroutine `ddsig_dis':
+In file included from all_subs_pre_daikon_7.F:379:
+all_subs_pre_daikon_7.F:385: warning: unused variable 'check'
+all_subs_pre_daikon_7.F: In subroutine `ddsig_e_dis':
+In file included from all_subs_pre_daikon_7.F:458:
+all_subs_pre_daikon_7.F:462: warning: unused variable 'kval_fail_cuts_'
+all_subs_pre_daikon_7.F:462: warning: unused variable 'check'
+all_subs_pre_daikon_7.F:460: warning: unused variable 'w'
+all_subs_pre_daikon_7.F:460: warning: unused variable 'qqs'
+all_subs_pre_daikon_7.F: In subroutine `ddsig_e_plot':
+In file included from all_subs_pre_daikon_7.F:551:
+all_subs_pre_daikon_7.F:560: warning: unused variable 'ok'
+all_subs_pre_daikon_7.F:557: warning: unused variable 'kmx'
+all_subs_pre_daikon_7.F:557: warning: unused variable 'kmn'
+all_subs_pre_daikon_7.F:554: warning: unused variable 'elastic'
+all_subs_pre_daikon_7.F: In subroutine `ddsig_e_res':
+In file included from all_subs_pre_daikon_7.F:655:
+all_subs_pre_daikon_7.F:659: warning: unused variable 'kval_fail_cuts_'
+all_subs_pre_daikon_7.F:657: warning: unused variable 'w'
+all_subs_pre_daikon_7.F:657: warning: unused variable 'qqs'
+all_subs_pre_daikon_7.F: In subroutine `ddsig_e_value':
+In file included from all_subs_pre_daikon_7.F:739:
+all_subs_pre_daikon_7.F:744: warning: unused variable 'kmx'
+all_subs_pre_daikon_7.F:744: warning: unused variable 'kmn'
+all_subs_pre_daikon_7.F:743: warning: unused variable 'i'
+all_subs_pre_daikon_7.F:742: warning: unused variable 'elastic'
+all_subs_pre_daikon_7.F:741: warning: unused variable 'sum'
+all_subs_pre_daikon_7.F: In subroutine `dsig_dqqs_dw_res':
+In file included from all_subs_pre_daikon_7.F:978:
+all_subs_pre_daikon_7.F:985: warning: unused variable 'nnr'
+all_subs_pre_daikon_7.F: In subroutine `dsig_e_dth_dep_dis':
+In file included from all_subs_pre_daikon_7.F:1301:
+all_subs_pre_daikon_7.F:1310: warning: unused variable 'd2'
+all_subs_pre_daikon_7.F:1310: warning: unused variable 'd1'
+all_subs_pre_daikon_7.F:1309: warning: unused variable 'fac3'
+all_subs_pre_daikon_7.F:1309: warning: unused variable 'fac2'
+all_subs_pre_daikon_7.F:1307: warning: unused variable 'rcode'
+all_subs_pre_daikon_7.F:1307: warning: unused variable 'ichg'
+all_subs_pre_daikon_7.F:1307: warning: unused variable 'inp'
+all_subs_pre_daikon_7.F: In subroutine `dsig_e_dth_dep_res':
+In file included from all_subs_pre_daikon_7.F:1407:
+all_subs_pre_daikon_7.F:1414: warning: unused variable 'nnr'
+all_subs_pre_daikon_7.F: In subroutine `dsig_elec':
+In file included from all_subs_pre_daikon_7.F:1512:
+all_subs_pre_daikon_7.F:1514: warning: unused variable 'i'
+all_subs_pre_daikon_7.F: In subroutine `dsig_plot':
+In file included from all_subs_pre_daikon_7.F:1592:
+all_subs_pre_daikon_7.F:1600: warning: unused variable 'coh_contributes_'
+all_subs_pre_daikon_7.F: In subroutine `dsig_qel':
+In file included from all_subs_pre_daikon_7.F:1696:
+all_subs_pre_daikon_7.F:1698: warning: unused variable 'i'
+all_subs_pre_daikon_7.F: In subroutine `dsig_value':
+In file included from all_subs_pre_daikon_7.F:1869:
+all_subs_pre_daikon_7.F:1876: warning: unused variable 'coh_contributes_'
+all_subs_pre_daikon_7.F:1873: warning: unused variable 'i'
+all_subs_pre_daikon_7.F:1871: warning: unused variable 'sum'
+all_subs_pre_daikon_7.F: In subroutine `inputs':
+In file included from all_subs_pre_daikon_7.F:2416:
+all_subs_pre_daikon_7.F:2420: warning: unused variable 'ccnc'
+all_subs_pre_daikon_7.F:2420: warning: unused variable 'im'
+all_subs_pre_daikon_7.F: In subroutine `kv2limits':
+In file included from all_subs_pre_daikon_7.F:2615:
+all_subs_pre_daikon_7.F:2622: warning: unused variable 'y'
+all_subs_pre_daikon_7.F: In subroutine `sig_plot':
+In file included from all_subs_pre_daikon_7.F:3435:
+all_subs_pre_daikon_7.F:3442: warning: unused variable 'coh_contributes_'
+all_subs_pre_daikon_7.F: In subroutine `sig_value':
+In file included from all_subs_pre_daikon_7.F:3638:
+all_subs_pre_daikon_7.F:3643: warning: unused variable 'coh_contributes_'
+all_subs_pre_daikon_7.F: In function `coh_contributes':
+In file included from all_subs_pre_daikon_7.F:3987:
+all_subs_pre_daikon_7.F:3988: warning: unused variable 'n_nucleons_'
+all_subs_pre_daikon_7.F:3988: warning: unused variable 'n_pions_'
+all_subs_pre_daikon_7.F:3988: warning: unused variable 'charge'
+all_subs_pre_daikon_7.F: In subroutine `create_fc_hadron':
+In file included from all_subs_pre_daikon_7.F:4348:
+all_subs_pre_daikon_7.F:4366: warning: unused variable 'fac'
+all_subs_pre_daikon_7.F:4366: warning: unused variable 'rad'
+all_subs_pre_daikon_7.F:4366: warning: unused variable 'v2'
+all_subs_pre_daikon_7.F:4366: warning: unused variable 'v1'
+all_subs_pre_daikon_7.F:4361: warning: unused variable 'fval'
+all_subs_pre_daikon_7.F:4361: warning: unused variable 'y'
+all_subs_pre_daikon_7.F:4361: warning: unused variable 'x'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `decay_charm_remnant':
+In file included from all_subs_pre_daikon_7.F:4515:
+all_subs_pre_daikon_7.F:4524: warning: unused variable 'hi_code_'
+all_subs_pre_daikon_7.F:4524: warning: unused variable 'lo_code_'
+all_subs_pre_daikon_7.F:4520: warning: unused variable 'charge_code_'
+all_subs_pre_daikon_7.F:4520: warning: unused variable 'resonance_code_'
+all_subs_pre_daikon_7.F: In function `mc_charmc':
+In file included from all_subs_pre_daikon_7.F:5007:
+all_subs_pre_daikon_7.F:4991: warning: unused variable 'nr'
+all_subs_pre_daikon_7.F:4991: warning: unused variable 'i'
+all_subs_pre_daikon_7.F: In function `mc_charms':
+In file included from all_subs_pre_daikon_7.F:5112:
+all_subs_pre_daikon_7.F:5116: warning: unused variable 'ctqpdf'
+all_subs_pre_daikon_7.F:5116: warning: unused variable 'fp4'
+all_subs_pre_daikon_7.F:5116: warning: unused variable 'fp3'
+all_subs_pre_daikon_7.F:5115: warning: unused variable 'fac2'
+all_subs_pre_daikon_7.F:5115: warning: unused variable 'fac1'
+all_subs_pre_daikon_7.F:5115: warning: unused variable 'ff3'
+all_subs_pre_daikon_7.F:5115: warning: unused variable 'ff2'
+all_subs_pre_daikon_7.F:5114: warning: unused variable 'irt'
+all_subs_pre_daikon_7.F: In subroutine `z_from_fragm_func':
+In file included from all_subs_pre_daikon_7.F:5296:
+all_subs_pre_daikon_7.F:5298: warning: unused variable 'maxf'
+all_subs_pre_daikon_7.F: In subroutine `calc_hadron_data':
+In file included from all_subs_pre_daikon_7.F:5676:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:76: warning: unused variable 'e_np_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpr'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpe'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'ippr'
+all_subs_pre_daikon_7.F: In subroutine `calc_xsectable':
+In file included from all_subs_pre_daikon_7.F:5853:
+all_subs_pre_daikon_7.F:5852: warning: unused variable 'n'
+all_subs_pre_daikon_7.F: In subroutine `check_pe':
+In file included from all_subs_pre_daikon_7.F:6102:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `ddsig_offshell_dis':
+In file included from all_subs_pre_daikon_7.F:6185:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `decay_agky':
+In file included from all_subs_pre_daikon_7.F:6234:
+all_subs_pre_daikon_7.F:6244: warning: unused variable 'dktemp'
+all_subs_pre_daikon_7.F: In subroutine `decay_general':
+In file included from all_subs_pre_daikon_7.F:6474:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:6484: warning: 'attempts2' might be used uninitialized in this function
+all_subs_pre_daikon_7.F: In subroutine `decay_inclusives':
+In file included from all_subs_pre_daikon_7.F:7074:
+all_subs_pre_daikon_7.F:7085: warning: unused variable 'mass2'
+all_subs_pre_daikon_7.F:7085: warning: unused variable 'mass1'
+all_subs_pre_daikon_7.F: In subroutine `decay_supervisor':
+In file included from all_subs_pre_daikon_7.F:7334:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `define_lepton_type':
+In file included from all_subs_pre_daikon_7.F:7595:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `dis_kinematics':
+In file included from all_subs_pre_daikon_7.F:7712:
+all_subs_pre_daikon_7.F:7723: warning: unused variable 'm_p_'
+all_subs_pre_daikon_7.F:7719: warning: unused variable 'w_m_'
+all_subs_pre_daikon_7.F:7717: warning: unused variable 'mass'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `dsig_dx_dy_offshell_dis':
+In file included from all_subs_pre_daikon_7.F:7905:
+all_subs_pre_daikon_7.F:7908: warning: unused variable 'fac3'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `dsig_resonance':
+In file included from all_subs_pre_daikon_7.F:7978:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `finalize_stdhep':
+In file included from all_subs_pre_daikon_7.F:8144:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/s2topdg.inc:17: warning: unused variable 'jj'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/s2topdg.inc:17: warning: unused variable 'nuc_codes_'
+all_subs_pre_daikon_7.F: In subroutine `fs_possibilities':
+In file included from all_subs_pre_daikon_7.F:8394:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `generate_nu_event':
+In file included from all_subs_pre_daikon_7.F:8626:
+all_subs_pre_daikon_7.F:8633: warning: unused variable 'imother'
+all_subs_pre_daikon_7.F:8633: warning: unused variable 'istatus'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/n3nuccodes.inc:25: warning: unused variable 'nuc_low_a_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/n3nuccodes.inc:25: warning: unused variable 'nuclear_code_'
+all_subs_pre_daikon_7.F: In subroutine `get_baryon_4v':
+In file included from all_subs_pre_daikon_7.F:8787:
+all_subs_pre_daikon_7.F:8783: warning: unused variable 'i'
+all_subs_pre_daikon_7.F: In subroutine `get_dsig1':
+In file included from all_subs_pre_daikon_7.F:8855:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `get_dsig2':
+In file included from all_subs_pre_daikon_7.F:8912:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `get_dsig_max':
+In file included from all_subs_pre_daikon_7.F:8975:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `get_ha_reaction_products':
+In file included from all_subs_pre_daikon_7.F:9066:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:9061: warning: unused variable 'ang'
+all_subs_pre_daikon_7.F:9061: warning: unused variable 'eloss'
+all_subs_pre_daikon_7.F:9060: warning: unused variable 'ind'
+all_subs_pre_daikon_7.F: In subroutine `get_hn_reaction_products':
+In file included from all_subs_pre_daikon_7.F:9261:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:9256: warning: unused variable 'ang'
+all_subs_pre_daikon_7.F:9256: warning: unused variable 'eloss'
+all_subs_pre_daikon_7.F:9255: warning: unused variable 'ind'
+all_subs_pre_daikon_7.F: In subroutine `get_impn':
+In file included from all_subs_pre_daikon_7.F:9435:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `get_old_reaction_products':
+In file included from all_subs_pre_daikon_7.F:9780:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:9775: warning: unused variable 'ang'
+all_subs_pre_daikon_7.F:9775: warning: unused variable 'eloss'
+all_subs_pre_daikon_7.F:9774: warning: unused variable 'ind'
+all_subs_pre_daikon_7.F: In subroutine `get_rand':
+all_subs_pre_daikon_7.F:10090: warning: unused variable 'i'
+all_subs_pre_daikon_7.F: In subroutine `get_rand_orthonormal':
+In file included from all_subs_pre_daikon_7.F:10106:
+all_subs_pre_daikon_7.F:10111: warning: unused variable 'sp'
+all_subs_pre_daikon_7.F:10111: warning: unused variable 'cp'
+all_subs_pre_daikon_7.F:10110: warning: unused variable 'st'
+all_subs_pre_daikon_7.F:10110: warning: unused variable 'ct'
+all_subs_pre_daikon_7.F: In function `get_xsec':
+In file included from all_subs_pre_daikon_7.F:10329:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `init_randomnumbers':
+In file included from all_subs_pre_daikon_7.F:10567:
+all_subs_pre_daikon_7.F:10570: warning: unused variable 'random'
+all_subs_pre_daikon_7.F:10569: warning: unused variable 'loop'
+all_subs_pre_daikon_7.F: In subroutine `intranuke':
+In file included from all_subs_pre_daikon_7.F:10797:
+all_subs_pre_daikon_7.F:10804: warning: unused variable 'pt2'
+all_subs_pre_daikon_7.F:10804: warning: unused variable 'phadmag'
+all_subs_pre_daikon_7.F:10804: warning: unused variable 'phad'
+all_subs_pre_daikon_7.F:10804: warning: unused variable 'ppar'
+all_subs_pre_daikon_7.F:10804: warning: unused variable 'mpi'
+all_subs_pre_daikon_7.F:10803: warning: unused variable 'ibin'
+all_subs_pre_daikon_7.F:10801: warning: unused variable 'partid'
+all_subs_pre_daikon_7.F:10799: warning: unused variable 'ke'
+all_subs_pre_daikon_7.F:10799: warning: unused variable 'p_gev_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `intranuke_absorbed':
+In file included from all_subs_pre_daikon_7.F:11031:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `intranuke_fzstep':
+In file included from all_subs_pre_daikon_7.F:11371:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:11366: warning: unused variable 'ind'
+all_subs_pre_daikon_7.F: In subroutine `intranuke_pi_inelastic':
+In file included from all_subs_pre_daikon_7.F:11461:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:11456: warning: unused variable 'sume'
+all_subs_pre_daikon_7.F:11456: warning: unused variable 'sumpz'
+all_subs_pre_daikon_7.F:11456: warning: unused variable 'sumpy'
+all_subs_pre_daikon_7.F:11456: warning: unused variable 'sumpx'
+all_subs_pre_daikon_7.F:11438: warning: unused variable 'qval'
+all_subs_pre_daikon_7.F:11437: warning: unused variable 'jp'
+all_subs_pre_daikon_7.F:11437: warning: unused variable 'ippnn'
+all_subs_pre_daikon_7.F:11437: warning: unused variable 'id'
+all_subs_pre_daikon_7.F:11438: warning: 'mparent' might be used uninitialized in this function
+all_subs_pre_daikon_7.F: In subroutine `intranuke_pifaten':
+In file included from all_subs_pre_daikon_7.F:11621:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'sig_pife_tot_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'e_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_reac_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_abs_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'e_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:76: warning: unused variable 'e_np_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpr'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpe'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'ippr'
+all_subs_pre_daikon_7.F: In subroutine `intranuke_pn_inelastic':
+In file included from all_subs_pre_daikon_7.F:11834:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F:11829: warning: unused variable 'sume'
+all_subs_pre_daikon_7.F:11829: warning: unused variable 'sumpz'
+all_subs_pre_daikon_7.F:11829: warning: unused variable 'sumpy'
+all_subs_pre_daikon_7.F:11829: warning: unused variable 'sumpx'
+all_subs_pre_daikon_7.F:11811: warning: unused variable 'qval'
+all_subs_pre_daikon_7.F:11810: warning: unused variable 'jp'
+all_subs_pre_daikon_7.F:11810: warning: unused variable 'ippnn'
+all_subs_pre_daikon_7.F:11810: warning: unused variable 'id'
+all_subs_pre_daikon_7.F:11811: warning: 'mparent' might be used uninitialized in this function
+all_subs_pre_daikon_7.F: In subroutine `intranuke_pnfaten':
+In file included from all_subs_pre_daikon_7.F:12019:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'sig_pife_tot_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'e_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_reac_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_abs_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'e_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:76: warning: unused variable 'e_np_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpr'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpe'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'ippr'
+all_subs_pre_daikon_7.F:12002: warning: unused variable 'r'
+all_subs_pre_daikon_7.F:12026: warning: 'bin' might be used uninitialized in this function
+all_subs_pre_daikon_7.F: In subroutine `intranuke_pnslam':
+In file included from all_subs_pre_daikon_7.F:12095:
+all_subs_pre_daikon_7.F:12099: warning: unused variable 'final_ke_'
+all_subs_pre_daikon_7.F:12099: warning: unused variable 'ke'
+all_subs_pre_daikon_7.F: In subroutine `intranuken':
+In file included from all_subs_pre_daikon_7.F:12166:
+all_subs_pre_daikon_7.F:12173: warning: unused variable 'pt2'
+all_subs_pre_daikon_7.F:12173: warning: unused variable 'phadmag'
+all_subs_pre_daikon_7.F:12173: warning: unused variable 'phad'
+all_subs_pre_daikon_7.F:12173: warning: unused variable 'ppar'
+all_subs_pre_daikon_7.F:12173: warning: unused variable 'mpi'
+all_subs_pre_daikon_7.F:12172: warning: unused variable 'ibin'
+all_subs_pre_daikon_7.F:12170: warning: unused variable 'partid'
+all_subs_pre_daikon_7.F:12168: warning: unused variable 'ke'
+all_subs_pre_daikon_7.F:12168: warning: unused variable 'p_gev_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `kv_limits1':
+In file included from all_subs_pre_daikon_7.F:12618:
+all_subs_pre_daikon_7.F:12621: warning: unused variable 'elastic'
+all_subs_pre_daikon_7.F:12619: warning: unused variable 'temp'
+all_subs_pre_daikon_7.F: In subroutine `kv_limits2':
+In file included from all_subs_pre_daikon_7.F:12699:
+all_subs_pre_daikon_7.F:12705: warning: unused variable 'temp'
+all_subs_pre_daikon_7.F:12705: warning: unused variable 'y'
+all_subs_pre_daikon_7.F:12705: warning: unused variable 'qqs'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `lightest_state':
+In file included from all_subs_pre_daikon_7.F:12803:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `make_lepton':
+In file included from all_subs_pre_daikon_7.F:13262:
+all_subs_pre_daikon_7.F:13265: warning: unused variable 'tmp2'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `mean_free_path':
+In file included from all_subs_pre_daikon_7.F:13377:
+all_subs_pre_daikon_7.F:13383: warning: unused variable 'rlmbda'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'sig_pife_tot_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'e_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_reac_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_abs_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'e_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:76: warning: unused variable 'e_np_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpr'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'inpe'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:70: warning: unused variable 'ippr'
+all_subs_pre_daikon_7.F:13372: warning: unused variable 'iel'
+all_subs_pre_daikon_7.F:13371: warning: unused variable 'sigzr'
+all_subs_pre_daikon_7.F:13371: warning: unused variable 'sigzncex'
+all_subs_pre_daikon_7.F:13371: warning: unused variable 'sigzpcex'
+all_subs_pre_daikon_7.F:13371: warning: unused variable 'sigzn'
+all_subs_pre_daikon_7.F:13371: warning: unused variable 'sigzp'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'mfp'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'sigc'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'siga'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'sigpr'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'sigmr'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'sigpe'
+all_subs_pre_daikon_7.F:13370: warning: unused variable 'sigme'
+all_subs_pre_daikon_7.F: In subroutine `define_n3_ffr_keys':
+all_subs_pre_daikon_7.F:13767: warning:
+         call ffkey(n3ffr_config_key, n3ffr_cfg_name, 
+              1
+all_subs_pre_daikon_7.F:13776: (continued):
+         call ffkey('N3XSC',n3ffr_calc_xsec,1,'LOGICAL')
+              2
+Argument #2 of `ffkey' is one type at (2) but is some other type at (1) [info -f g77 M GLOBALS]
+all_subs_pre_daikon_7.F: In subroutine `nuclear_rescattering':
+In file included from all_subs_pre_daikon_7.F:13763:
+In file included from all_subs_pre_daikon_7.F:13872:
+all_subs_pre_daikon_7.F:13875: warning: unused variable 'nucleus'
+all_subs_pre_daikon_7.F:13875: warning: unused variable 'code'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `offshell_differential':
+In file included from all_subs_pre_daikon_7.F:14040:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `pauli_blocking':
+In file included from all_subs_pre_daikon_7.F:14168:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `pi_scatter':
+In file included from all_subs_pre_daikon_7.F:14307:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `print_configuration':
+In file included from all_subs_pre_daikon_7.F:14398:
+all_subs_pre_daikon_7.F:14407: warning: unused variable 'oddcarrot_name_'
+all_subs_pre_daikon_7.F: In subroutine `qel_define_fs':
+In file included from all_subs_pre_daikon_7.F:14613:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `qel_kinematics':
+In file included from all_subs_pre_daikon_7.F:14686:
+all_subs_pre_daikon_7.F:14692: warning: unused variable 'amax'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `read_hadron_data':
+In file included from all_subs_pre_daikon_7.F:14834:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'sig_pife_tot_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:90: warning: unused variable 'e_car_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_reac_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'sig_pife_abs_ash_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/hadron_data.inc:89: warning: unused variable 'e_ash_'
+all_subs_pre_daikon_7.F:14827: warning: unused variable 'mfp'
+all_subs_pre_daikon_7.F:14827: warning: unused variable 'e'
+all_subs_pre_daikon_7.F: In subroutine `res_kinematics':
+In file included from all_subs_pre_daikon_7.F:15042:
+all_subs_pre_daikon_7.F:15056: warning: unused variable 'value'
+all_subs_pre_daikon_7.F:15056: warning: unused variable 'sum'
+all_subs_pre_daikon_7.F:15049: warning: unused variable 'mass'
+all_subs_pre_daikon_7.F:15046: warning: unused variable 'fs_list_'
+all_subs_pre_daikon_7.F:15046: warning: unused variable 'n_fs_'
+all_subs_pre_daikon_7.F:15045: warning: unused variable 'ires'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `scatter_coherent':
+In file included from all_subs_pre_daikon_7.F:15313:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `scatter_nue':
+In file included from all_subs_pre_daikon_7.F:15429:
+all_subs_pre_daikon_7.F:15431: warning: unused variable 'p5nu'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `scattering':
+In file included from all_subs_pre_daikon_7.F:15558:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `select_interaction':
+In file included from all_subs_pre_daikon_7.F:15623:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `select_nucleon':
+In file included from all_subs_pre_daikon_7.F:15721:
+all_subs_pre_daikon_7.F:15731: warning: unused variable 'rm'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In subroutine `set_default_parameters':
+In file included from all_subs_pre_daikon_7.F:16035:
+all_subs_pre_daikon_7.F:16037: warning: unused variable 'def'
+all_subs_pre_daikon_7.F: In subroutine `subtract_binding_energies':
+In file included from all_subs_pre_daikon_7.F:16403:
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:49: warning: unused variable 'ipn_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:45: warning: unused variable 'ccnc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:41: warning: unused variable 'fc_name_'
+/afs/fnal.gov/files/code/e875/general/ups/prd/NEUGEN3/Linux2.4-GCC_3_4/development/inc/fncodes.inc:35: warning: unused variable 'process_name_'
+all_subs_pre_daikon_7.F: In function `ccqel_dxsec':
+In file included from all_subs_pre_daikon_7.F:17233:
+all_subs_pre_daikon_7.F:17242: warning: unused variable 't2'
+all_subs_pre_daikon_7.F:17242: warning: unused variable 't1'
+all_subs_pre_daikon_7.F: In function `dis_dxsec':
+In file included from all_subs_pre_daikon_7.F:17893:
+all_subs_pre_daikon_7.F:17898: warning: unused variable 'ctqpdf'
+all_subs_pre_daikon_7.F:17896: warning: unused variable 'irt'
+all_subs_pre_daikon_7.F: In subroutine `e_dissf':
+In file included from all_subs_pre_daikon_7.F:18157:
+all_subs_pre_daikon_7.F:18164: warning: unused variable 'factor'
+all_subs_pre_daikon_7.F: In subroutine `htwist_bymod':
+In file included from all_subs_pre_daikon_7.F:19206:
+all_subs_pre_daikon_7.F:19201: warning: unused variable 'q2min'
+all_subs_pre_daikon_7.F:19200: warning: unused variable 'ipdfset'
+all_subs_pre_daikon_7.F:19200: warning: unused variable 'ipdfgroup'
+all_subs_pre_daikon_7.F: In subroutine `nu_dissf':
+In file included from all_subs_pre_daikon_7.F:25609:
+all_subs_pre_daikon_7.F:25636: warning: unused variable 'eta'
+all_subs_pre_daikon_7.F:25636: warning: unused variable 'y'
+all_subs_pre_daikon_7.F:25621: warning: unused variable 'factor'
+all_subs_pre_daikon_7.F:25615: warning: unused variable 'am1s'
+all_subs_pre_daikon_7.F:25615: warning: unused variable 'am1'
+all_subs_pre_daikon_7.F:25614: warning: unused variable 'ctqpdf'
+all_subs_pre_daikon_7.F:25614: warning: unused variable 'fp4'
+all_subs_pre_daikon_7.F:25614: warning: unused variable 'fp3'
+all_subs_pre_daikon_7.F:25613: warning: unused variable 'fac2'
+all_subs_pre_daikon_7.F:25613: warning: unused variable 'fac1'
+all_subs_pre_daikon_7.F:25613: warning: unused variable 'ff3'
+all_subs_pre_daikon_7.F:25613: warning: unused variable 'ff2'
+all_subs_pre_daikon_7.F:25613: warning: unused variable 'pd'
+all_subs_pre_daikon_7.F:25612: warning: unused variable 'irt'
+all_subs_pre_daikon_7.F: In subroutine `shell':
+all_subs_pre_daikon_7.F:26196: warning: unused variable 'rr'
+all_subs_pre_daikon_7.F:26190: warning: unused variable 'ok'
+all_subs_pre_daikon_7.F: In subroutine `coherent_state':
+In file included from all_subs_pre_daikon_7.F:26435:
+all_subs_pre_daikon_7.F:26441: warning: unused variable 'magp'
+all_subs_pre_daikon_7.F:26441: warning: unused variable 'cospi'
+all_subs_pre_daikon_7.F:26441: warning: unused variable 'val'
+all_subs_pre_daikon_7.F:26438: warning: unused variable 'i'
+all_subs_pre_daikon_7.F:26437: warning: unused variable 'front'
+all_subs_pre_daikon_7.F: In subroutine `fourvectors':
+In file included from all_subs_pre_daikon_7.F:26858:
+all_subs_pre_daikon_7.F:26881: warning: unused variable 'i'
+all_subs_pre_daikon_7.F:26879: warning: unused variable 'q2'
+all_subs_pre_daikon_7.F:26875: warning: unused variable 'enu'
+all_subs_pre_daikon_7.F:26864: warning: unused variable 'p4t'
+all_subs_pre_daikon_7.F:26864: warning: unused variable 'p4qc'
+all_subs_pre_daikon_7.F:26883: warning: 'mlep2' might be used uninitialized in this function

@@ -1,0 +1,539 @@
+%MSG-w Configuration:  03-Aug-2007 23:00:58 EDT pre-events
+WARNING: do not embed replace statements to modify a parameter from a module which hasn't been cloned: 
+  Parameter doT0Correction in DTParametrizedDriftAlgo_CSA07
+  Replace happens in Configuration/StandardSequences/data/FakeConditions.cff
+  This will be an error in future releases.  Please fix.
+%MSG
+%MSG-w Configuration:  03-Aug-2007 23:00:58 EDT pre-events
+WARNING: do not embed replace statements to modify a parameter from a module which hasn't been cloned: 
+  Parameter UseCalibDataFromDB in siPixelClusters
+  Replace happens in Configuration/StandardSequences/data/FakeConditions.cff
+  This will be an error in future releases.  Please fix.
+%MSG
+%MSG-w Configuration:  03-Aug-2007 23:00:58 EDT pre-events
+WARNING: do not embed replace statements to modify a parameter from a module which hasn't been cloned: 
+  Parameter UseCalibDataFromDB in siStripDigis
+  Replace happens in Configuration/StandardSequences/data/FakeConditions.cff
+  This will be an error in future releases.  Please fix.
+%MSG
+%MSG-w Configuration:  03-Aug-2007 23:00:58 EDT pre-events
+WARNING: do not embed replace statements to modify a parameter from a module which hasn't been cloned: 
+  Parameter UseCalibDataFromDB in siStripClusters
+  Replace happens in Configuration/StandardSequences/data/FakeConditions.cff
+  This will be an error in future releases.  Please fix.
+%MSG
+Element: Constant (64)
+MagneticFieldVolumes:MAGF
+Timing in XMLIdealGeometryESSource : Real Time = 0.66 (s), User Time = 0.6 (s), System Time = 0.04 (s), Cpu Time = 0.64 (s), Idle Time = 0.02 (s), 
+Element: Constant (2866)
+cms:OCMS
+Timing in XMLIdealGeometryESSource : Real Time = 4.54 (s), User Time = 4.08 (s), System Time = 0.31 (s), Cpu Time = 4.39 (s), Idle Time = 0.15 (s), 
+<PFClusterProducer::PFClusterProducer>: will produce PFRecHits.
+ --------------- HepPDT Version 2.02.02 --------------- 
+found 539 particles
+GMSB_SIM146_REC153_V0_94_10_RECO-100evt.root: level[Always] Root file version:51400
+GMSB_SIM146_REC153_V0_94_10_AOD-100evt.root: level[Always] Root file version:51400
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:03:26 EDT  Run: 1 Event: 1
+Warning: L1 trigger info not available 
+%MSG
+#------------------------------------------------------------------------
+#                      FastJet release 2.1.0
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:21 EDT  Run: 1 Event: 1
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+#              Written by Matteo Cacciari and Gavin Salam		   
+#              http://www.lpthe.jussieu.fr/~salam/fastjet		   
+#								      	   
+# Longitudinally invariant Kt, and inclusive Cambridge/Aachen clustering
+# using fast geometric algorithms, with optional external jet-finder    
+# plugins. Please cite hep-ph/0512210 if you use this code.             
+#								      	   
+# This package uses T.Chan's closest pair algorithm, Proc.13th ACM-SIAM 
+# Symp. Discr. Alg, p.472 (2002).
+#-----------------------------------------------------------------------
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 9.422995469e-09
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.076222241e-06
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = -13.8259 pz = -0.0241277
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = -13.8259 pz = -0.0241277
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = 5.23946 pz = 0.13612
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = 5.23946 pz = 0.13612
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 4 tan theta = -12.5162 pz = -0.0818606
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = -5.67379 pz = -0.147472
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = -5.67379 pz = -0.147472
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 4 tan theta = 3.27007 pz = 0.298428
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = 7.63163 pz = 0.0468668
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = 7.63163 pz = 0.0468668
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:04:22 EDT  Run: 1 Event: 1
+invalid trajectory state on surface:  iSurf = 3 tan theta = 2.07338 pz = 0.355258
+%MSG
+%MSG-e Root_Error:  PoolOutputModule:RECO TClass::BuildRealData()  03-Aug-2007 23:04:51 EDT  Run: 1 Event: 1
+Cannot find any ShowMembers function for TrackingRecHit!
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:05:00 EDT  Run: 1 Event: 2
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 5.718831426e-07
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:06:02 EDT  Run: 1 Event: 2
+invalid trajectory state on surface:  iSurf = 3 tan theta = -0.513939 pz = -1.35347
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:06:09 EDT  Run: 1 Event: 3
+Warning: L1 trigger info not available 
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:07:59 EDT  Run: 1 Event: 3
+Fitted position is out of tracker bounds.
+
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.693375002e-06
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:08:00 EDT  Run: 1 Event: 3
+invalid trajectory state on surface:  iSurf = 3 tan theta = 0.393943 pz = 1.07098
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:08:09 EDT  Run: 1 Event: 4
+Warning: L1 trigger info not available 
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:08:34 EDT  Run: 1 Event: 4
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:08:34 EDT  Run: 1 Event: 4
+Fitted position is out of tracker bounds.
+
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:08:41 EDT  Run: 1 Event: 5
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.560931232e-07
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:09:23 EDT  Run: 1 Event: 5
+invalid trajectory state on surface:  iSurf = 3 tan theta = 2.58809 pz = 0.324464
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:09:30 EDT  Run: 1 Event: 6
+Warning: L1 trigger info not available 
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:10:04 EDT  Run: 1 Event: 7
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.540819924e-08
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:11:18 EDT  Run: 1 Event: 8
+Warning: L1 trigger info not available 
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:12:01 EDT  Run: 1 Event: 9
+Warning: L1 trigger info not available 
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:13:14 EDT  Run: 1 Event: 9
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:13:15 EDT  Run: 1 Event: 9
+invalid trajectory state on surface:  iSurf = 4 tan theta = -1.44545 pz = -0.691564
+%MSG
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:13:22 EDT  Run: 1 Event: 10
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.53879619e-08
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:17:04 EDT  Run: 1 Event: 13
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:22:17 EDT  Run: 1 Event: 17
+invalid trajectory state on surface:  iSurf = 4 tan theta = 3.03753 pz = 0.312394
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.29480981e-08
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:23:35 EDT  Run: 1 Event: 20
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 2.849920555e-05
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 8.467352668e-09
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.443495482e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 8.063948726e-08
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:32:18 EDT  Run: 1 Event: 30
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 8.245296141e-08
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 9.578604486e-09
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 03-Aug-2007 23:37:25 EDT  Run: 1 Event: 34
+invalid trajectory state on surface:  iSurf = 3 tan theta = -0.567633 pz = -1.40364
+%MSG
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  03-Aug-2007 23:38:34 EDT  Run: 1 Event: 36
+Fitted position is out of tracker bounds.
+
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 4.971467332e-07
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 4.945858603e-05
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 2.326300253e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 2.341328959e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 6.312051739e-06
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 8.829374526e-09
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.460273973e-08
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.102235973e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 9.405720875e-06
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 6.626639102e-07
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  03-Aug-2007 23:51:34 EDT  Run: 1 Event: 50
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 3.170791091e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.661836224e-08
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.056810397e-08
+%MSG-e PFProducer:  GoodSeedProducer:elecpreid 04-Aug-2007 00:06:28 EDT  Run: 1 Event: 64
+invalid trajectory state on surface:  iSurf = 3 tan theta = -0.537046 pz = -1.38266
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 5.92440581e-08
+%MSG-e RecoVertex/SequentialVertexFitter:   ConvertedPhotonProducer:convertedPhotons  04-Aug-2007 00:08:11 EDT  Run: 1 Event: 66
+The maximum number of steps has been exceeded. Returned vertex is invalid
+
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 2.842792869e-07
+[AdaptiveVertexReconstructor] warning: all tracks (2) would be recycled for next fit.
+                              breaking after reconstruction of 2 vertices.
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.425484979e-08
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 4.995274364e-07
+[AdaptiveVertexReconstructor] warning: all tracks (2) would be recycled for next fit.
+                              breaking after reconstruction of 2 vertices.
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 0.0003472452971
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 2.290920423e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.27402228e-08
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.75043111e-07
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 7.972350331e-06
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 0.005430560064
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 9.976082001e-05
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.326804647e-06
+%MSG-e CSCRecHitBProducer:  CSCRecHitBProducer:csc2DRecHits  04-Aug-2007 00:28:28 EDT  Run: 1 Event: 90
+Warning: L1 trigger info not available 
+%MSG
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 3.204916011e-08
+HelixArbitraryPlaneCrossing::pathLength : no convergence
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 4.480878223e-08
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.227644136e-08
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 5.021630786e-06
+PFClusterAlgo Warning: more than 50 iterations in pfcluster finding: 1.494679574e-08
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 CSCRecHitBProducer   -e CSCRecHitBProduc                     100*     100
+    2 PFProducer           -e GoodSeedProducer                    1940*    1940
+    3 RecoVertex/Sequentia -e ConvertedPhotonP                    1957*    1957
+    4 Root_Error           -e PoolOutputModule TClass::BuildRea      1        1
+
+* Some occurrences of this message were suppressed in all logs, due to limits.
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 CSCRecHitBProducer   1/1              1/2              1/100
+    2 PFProducer           1/1              1/1              1/100
+    3 RecoVertex/SequentialVertexFitter 1/1              1/1              1/100
+    4 Root_Error           1/1                               
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Error                3998                3998
+
+Timing Report  (in seconds)
+
+CSCBaseEl:loop                                                                                              1794        2.341 (real)        0.020 (cpu)
+CSCBaseEl:simulate                                                                                          1794        3.070 (real)        0.020 (cpu)
+CSCStripEl:filldigi                                                                                          897        1.374 (real)        0.000 (cpu)
+CSCStripEl:init                                                                                              897        0.001 (real)        0.000 (cpu)
+CSCStripElectronicsSim                                                                                       897        3.783 (real)        0.020 (cpu)
+CSCStripHitSim                                                                                               897        1.063 (real)        0.020 (cpu)
+CSCWireElectronicsSim                                                                                        897        0.706 (real)        0.000 (cpu)
+CSCWireHitSim                                                                                                897        0.826 (real)        0.000 (cpu)
+CachedTrajectory::propagate                                                                               681479       14.175 (real)        0.000 (cpu)
+CachedTrajectory::propagate::findClosestPoint                                                             681479        0.578 (real)        0.000 (cpu)
+CachedTrajectory::propagate::localPropagation                                                             435939       11.521 (real)        0.000 (cpu)
+MuonIdProducer::produce                                                                                      199       82.481 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillArbitration                                                                     199        0.066 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillCaloCompatibility                                                              2440        0.071 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillIsolation                                                                      2440       20.452 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillMuonId                                                                        11190       61.569 (real)        0.000 (cpu)
+MuonIdProducer::produce::init                                                                                199        0.120 (real)        0.000 (cpu)
+MuonIdProducer::produce::init::getInputCollections                                                           199        0.116 (real)        0.000 (cpu)
+MuonIdProducer::produce::init::getPropagator                                                                 199        0.002 (real)        0.000 (cpu)
+MuonIdProducer::produce::init::misc                                                                          199        0.000 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|addTraj                                                           2870        0.000 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection                                                68        0.044 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::chooseRegionalTrackerTracks                   68        0.026 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::trackCollection                               68        0.044 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::Total                                                 71        1.927 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::build                                                 68        1.595 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::makeTkCandCollection                                  68        0.048 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::trackMatcher                                          68        0.281 (real)        0.000 (cpu)
+RPCSim                                                                                                       366        0.004 (real)        0.000 (cpu)
+TrackDetectorAssociator::associate                                                                         32045      120.635 (real)        1.260 (cpu)
+TrackDetectorAssociator::associate::fillInfo                                                               32044       57.048 (real)        0.000 (cpu)
+TrackDetectorAssociator::associate::getTrajectories                                                        32045       63.064 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers                                                                     2508       14.805 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::access::CaloTowers                                                 2508        0.032 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::addCrossedTowers                                                   2508        0.018 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::addTowersInTheRegion                                               2508        1.264 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::matching                                                           2508       13.453 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal                                                                          29535       13.537 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::access::EcalBarrel                                                      29240        0.314 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::access::EcalEndcaps                                                     29240        0.135 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::addCrossedHits                                                          29240        0.076 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::addHitsInTheRegion                                                      29240        1.387 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching                                                                29240       11.210 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching::cone                                                          29240        0.020 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching::crossed                                                       29240        7.750 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching::region                                                        29240        3.198 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO                                                                            11190        1.771 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::access::HO                                                                 6280        0.055 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::addCrossedHits                                                             6280        0.019 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::addHitsInTheRegion                                                         6280        0.330 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::matching                                                                   6280        1.292 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal                                                                          11190        6.421 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::access::Hcal                                                            11131        0.106 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::addCrossedHits                                                          11131        1.072 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::addHcal                                                                 11131        0.042 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::addHitsInTheRegion                                                      11131        0.976 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::matching                                                                11131        5.139 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon                                                                          11190       19.847 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon::access                                                                  11190        0.172 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon::findSemgents                                                            11190        0.086 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon::matchChembers                                                           11190       19.502 (real)        0.000 (cpu)
+firstcall_CachedTrajectory::propagate                                                                          1        0.000 (real)        0.000 (cpu)
+firstcall_CachedTrajectory::propagate::findClosestPoint                                                        1        0.000 (real)        0.000 (cpu)
+firstcall_CachedTrajectory::propagate::localPropagation                                                        1        0.000 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce                                                                              1        2.033 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillArbitration                                                             1        0.001 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillCaloCompatibility                                                       1        0.001 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillIsolation                                                               1        0.947 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillMuonId                                                                  1        0.956 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init                                                                        1        0.003 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init::getInputCollections                                                   1        0.003 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init::getPropagator                                                         1        0.000 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init::misc                                                                  1        0.000 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|addTraj                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection                                       1        0.003 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::chooseRegionalTrackerTracks          1        0.002 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::trackCollection                      1        0.003 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::Total                                        1        0.017 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::build                                        1        0.008 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::makeTkCandCollection                         1        0.004 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::trackMatcher                                 1        0.005 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::associate                                                                   1        0.954 (real)        0.010 (cpu)
+firstcall_TrackDetectorAssociator::associate::fillInfo                                                         1        0.002 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::associate::getTrajectories                                                  1        0.951 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers                                                              1        0.061 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::access::CaloTowers                                          1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::addCrossedTowers                                            1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::addTowersInTheRegion                                        1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::matching                                                    1        0.060 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal                                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::access::EcalBarrel                                                1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::access::EcalEndcaps                                               1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::addCrossedHits                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::addHitsInTheRegion                                                1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching                                                          1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching::cone                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching::crossed                                                 1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching::region                                                  1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO                                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::access::HO                                                          1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::addCrossedHits                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::addHitsInTheRegion                                                  1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::matching                                                            1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal                                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::access::Hcal                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::addCrossedHits                                                    1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::addHcal                                                           1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::addHitsInTheRegion                                                1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::matching                                                          1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon                                                                    1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon::access                                                            1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon::findSemgents                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon::matchChembers                                                     1        0.000 (real)        0.000 (cpu)
+
+
+
+Timing Report  (in seconds)
+
+CSCBaseEl:loop                                                                                              1794        2.341 (real)        0.020 (cpu)
+CSCBaseEl:simulate                                                                                          1794        3.070 (real)        0.020 (cpu)
+CSCStripEl:filldigi                                                                                          897        1.374 (real)        0.000 (cpu)
+CSCStripEl:init                                                                                              897        0.001 (real)        0.000 (cpu)
+CSCStripElectronicsSim                                                                                       897        3.783 (real)        0.020 (cpu)
+CSCStripHitSim                                                                                               897        1.063 (real)        0.020 (cpu)
+CSCWireElectronicsSim                                                                                        897        0.706 (real)        0.000 (cpu)
+CSCWireHitSim                                                                                                897        0.826 (real)        0.000 (cpu)
+CachedTrajectory::propagate                                                                               681479       14.175 (real)        0.000 (cpu)
+CachedTrajectory::propagate::findClosestPoint                                                             681479        0.578 (real)        0.000 (cpu)
+CachedTrajectory::propagate::localPropagation                                                             435939       11.521 (real)        0.000 (cpu)
+MuonIdProducer::produce                                                                                      199       82.481 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillArbitration                                                                     199        0.066 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillCaloCompatibility                                                              2440        0.071 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillIsolation                                                                      2440       20.452 (real)        0.000 (cpu)
+MuonIdProducer::produce::fillMuonId                                                                        11190       61.569 (real)        0.000 (cpu)
+MuonIdProducer::produce::init                                                                                199        0.120 (real)        0.000 (cpu)
+MuonIdProducer::produce::init::getInputCollections                                                           199        0.116 (real)        0.000 (cpu)
+MuonIdProducer::produce::init::getPropagator                                                                 199        0.002 (real)        0.000 (cpu)
+MuonIdProducer::produce::init::misc                                                                          199        0.000 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|addTraj                                                           2870        0.000 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection                                                68        0.044 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::chooseRegionalTrackerTracks                   68        0.026 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::trackCollection                               68        0.044 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::Total                                                 71        1.927 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::build                                                 68        1.595 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::makeTkCandCollection                                  68        0.048 (real)        0.000 (cpu)
+Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::trackMatcher                                          68        0.281 (real)        0.000 (cpu)
+RPCSim                                                                                                       366        0.004 (real)        0.000 (cpu)
+TrackDetectorAssociator::associate                                                                         32045      120.635 (real)        1.260 (cpu)
+TrackDetectorAssociator::associate::fillInfo                                                               32044       57.048 (real)        0.000 (cpu)
+TrackDetectorAssociator::associate::getTrajectories                                                        32045       63.064 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers                                                                     2508       14.805 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::access::CaloTowers                                                 2508        0.032 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::addCrossedTowers                                                   2508        0.018 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::addTowersInTheRegion                                               2508        1.264 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillCaloTowers::matching                                                           2508       13.453 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal                                                                          29535       13.537 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::access::EcalBarrel                                                      29240        0.314 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::access::EcalEndcaps                                                     29240        0.135 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::addCrossedHits                                                          29240        0.076 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::addHitsInTheRegion                                                      29240        1.387 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching                                                                29240       11.210 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching::cone                                                          29240        0.020 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching::crossed                                                       29240        7.750 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillEcal::matching::region                                                        29240        3.198 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO                                                                            11190        1.771 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::access::HO                                                                 6280        0.055 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::addCrossedHits                                                             6280        0.019 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::addHitsInTheRegion                                                         6280        0.330 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHO::matching                                                                   6280        1.292 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal                                                                          11190        6.421 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::access::Hcal                                                            11131        0.106 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::addCrossedHits                                                          11131        1.072 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::addHcal                                                                 11131        0.042 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::addHitsInTheRegion                                                      11131        0.976 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillHcal::matching                                                                11131        5.139 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon                                                                          11190       19.847 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon::access                                                                  11190        0.172 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon::findSemgents                                                            11190        0.086 (real)        0.000 (cpu)
+TrackDetectorAssociator::fillMuon::matchChembers                                                           11190       19.502 (real)        0.000 (cpu)
+firstcall_CachedTrajectory::propagate                                                                          1        0.000 (real)        0.000 (cpu)
+firstcall_CachedTrajectory::propagate::findClosestPoint                                                        1        0.000 (real)        0.000 (cpu)
+firstcall_CachedTrajectory::propagate::localPropagation                                                        1        0.000 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce                                                                              1        2.033 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillArbitration                                                             1        0.001 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillCaloCompatibility                                                       1        0.001 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillIsolation                                                               1        0.947 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::fillMuonId                                                                  1        0.956 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init                                                                        1        0.003 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init::getInputCollections                                                   1        0.003 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init::getPropagator                                                         1        0.000 (real)        0.000 (cpu)
+firstcall_MuonIdProducer::produce::init::misc                                                                  1        0.000 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|addTraj                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection                                       1        0.003 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::chooseRegionalTrackerTracks          1        0.002 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|makeTkCandCollection::trackCollection                      1        0.003 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::Total                                        1        0.017 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::build                                        1        0.008 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::makeTkCandCollection                         1        0.004 (real)        0.000 (cpu)
+firstcall_Muon|RecoMuon|GlobalMuonTrajectoryBuilder|trajectories::trackMatcher                                 1        0.005 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::associate                                                                   1        0.954 (real)        0.010 (cpu)
+firstcall_TrackDetectorAssociator::associate::fillInfo                                                         1        0.002 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::associate::getTrajectories                                                  1        0.951 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers                                                              1        0.061 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::access::CaloTowers                                          1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::addCrossedTowers                                            1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::addTowersInTheRegion                                        1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillCaloTowers::matching                                                    1        0.060 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal                                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::access::EcalBarrel                                                1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::access::EcalEndcaps                                               1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::addCrossedHits                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::addHitsInTheRegion                                                1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching                                                          1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching::cone                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching::crossed                                                 1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillEcal::matching::region                                                  1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO                                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::access::HO                                                          1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::addCrossedHits                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::addHitsInTheRegion                                                  1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHO::matching                                                            1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal                                                                    1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::access::Hcal                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::addCrossedHits                                                    1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::addHcal                                                           1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::addHitsInTheRegion                                                1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillHcal::matching                                                          1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon                                                                    1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon::access                                                            1        0.001 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon::findSemgents                                                      1        0.000 (real)        0.000 (cpu)
+firstcall_TrackDetectorAssociator::fillMuon::matchChembers                                                     1        0.000 (real)        0.000 (cpu)
+
+
+DDCompare stat 10300099 134453958
+Sib rot stats same/diff 18060626 46036797
+
+Main Thread CPU elapsed time 1585
