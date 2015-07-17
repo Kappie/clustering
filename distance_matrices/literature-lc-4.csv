@@ -1,0 +1,7 @@
+file,./doyle_the_adventures_of_sherlock_holmes.txt,./doyle_the_hound_of_the_baskervilles.txt,./fitzgerald_the_beautiful_and_the_damned.txt,./fitzgerald_this_side_of_paradise.txt,./lawrence_sons_and_lovers.txt,./lawrence_the_white_peacock.txt
+./doyle_the_adventures_of_sherlock_holmes.txt,0.0007789207918132739,,,,,
+./doyle_the_hound_of_the_baskervilles.txt,0.9152587897182456,0.0009824612473619096,,,,
+./fitzgerald_the_beautiful_and_the_damned.txt,0.9356298616021821,0.9452752803313466,0.0006667340135367209,,,
+./fitzgerald_this_side_of_paradise.txt,0.9240310493943219,0.9279580515236721,0.9240408122032528,0.0007599361653621095,,
+./lawrence_sons_and_lovers.txt,0.9444710593114297,0.9534231883021701,0.9355046297951449,0.9435951521218405,0.0006685495691966679,
+./lawrence_the_white_peacock.txt,0.9331719316081729,0.9437348416640461,0.9298999898979695,0.934313518543249,0.9274319831253799,0.0006892600362723094

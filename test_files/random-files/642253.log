@@ -1,0 +1,748 @@
+<!-- Title: 21:46:32  Tue Sep 11 2001 -->
+<!-- Crewchief: L2 crate -->
+<!-- Op1: &nbsp; -->
+<!-- Op2: &nbsp; -->
+<!-- Op3: &nbsp; -->
+<!-- Op4: &nbsp; -->
+<!-- Op5: &nbsp; -->
+<!-- Op6: &nbsp; -->
+<!-- Notes: -->
+<pre>needs a new page</pre>
+
+
+<!-- Date: Wed Sep 12 22:34:26 2001 -->
+<center><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-224&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-224' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-225&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-225' width='300'></a></center>
+<!-- Author: Matt -->
+
+
+<!-- Date: Wed Sep 12 22:57:13 2001 -->
+The screen captures above are from runs taken with L2_TORTURE[3,143] with the alpha cutting: L1A = 18 kHz, L2A = 70 Hz, deadtime < 2%.  XTRPlist and L1int were the only boards in the L2 decision crate.  XTRP was sending fake tracks in a fixed pattern (Extra 1 = 1).  In these runs we observed the XTRPlist frequently not sending magic bus words both in TrigMon (1/5 events) and on the backplane.  One run with the same trigger table and the alpha tagging was taken with L1A = L2A = 275 Hz and 99% deadtime.  In that run the XTRPlist board stayed in sync for about 100k events.<p> 
+Triggering the front scope on the backplane condition of START_LOAD high and MOD_DONE for XTRPlist low we see that the data coming from XTRP looks normal (left plot) with no missed DS on a L1A.  This was also confirmed by Nathan who left XTRP in a condition where it went for 10M L1A without losing sync with respect to SVT.  This plot also shows that XTRPlist did not take BOSS when it timed out.  The right plots shows that this is because BUFFER_MATCH (the L2 buffer requested by the alpha = the L2 buffer in the XTRPlist FIFOs) was never asserted.
+<!-- Author: Matt -->
+
+
+<!-- Date: Wed Sep 12 23:06:15 2001 -->
+<center><a href='/elog/notebooks/l2/Wed_Sep_12_2001_230534.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-228' ></a><a href='/elog/notebooks/l2/Wed_Sep_12_2001_230558.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-230' ></a></center>
+<!-- Author: Matt -->
+
+
+<!-- Date: Wed Sep 12 23:59:04 2001 -->
+The above plots are captured from the LA triggering on the XTRPlist not sending any magic bus words.  The plot on the left is 100 usec/div and shows the whole event.  The plot on the right is 20 usec/div and focuses on the beginning of that event. 
+<p><TABLE border> 
+<TR><TH>XTRPlist signal</TH><TH>POD1 pin</TH></TR> 
+<TR><TD>START_LOAD_CLEAN</TD><TD>0</TH></TR> 
+<TR><TD>S0_OUT</TD><TD>1</TD></TR> 
+<TR><TD>S1_IN</TD><TD>2</TD></TR> 
+<TR><TD>WE_ARE_BOSS</TD><TD>3</TD></TR> 
+<TR><TD>S1_OUT</TD><TD>4</TD></TR> 
+<TR><TD>S2_OUT</TD><TD>5</TD></TR> 
+<TR><TD>BUFF_REQ0</TD><TD>6</TD></TR> 
+<TR><TD>BUFF_REQ1</TD><TD>7</TD></TR> 
+<TR><TD>BUFFER_MATCH</TD><TD>8</TD></TR> 
+<TR><TD>DATA_TO_MEM19</TD><TD>9</TD></TR> 
+<TR><TD>DATA_TO_MEM20</TD><TD>10</TD></TR> 
+<TR><TD>SOMEONE_VALID</TD><TD>11</TD></TR> 
+<TR><TD>FIFO_EF</TD><TD>12</TD></TR> 
+<TR><TD>BUF0 (front panel)</TD><TD>13</TD></TR> 
+<TR><TD>BUF1 (front panel)</TD><TD>14</TD></TR> 
+<TR><TD>DS (front panel)</TD><TD>15</TD></TR> 
+</TABLE BORDER><p> 
+The alpha requests buffer 3 (6 and 7 high).  For the first few usec of the event, the buffer waiting in the XTRPlist FIFOs is also 3 (9 and 10 high) and BUFFER_MATCH is asserted.  SOMEONE_VALID and FIFO_EF are also asserted, so the board is just waiting for the counter delay (17 usec) to proceed through the SM and send its data.  However, before the counter is ready, the buffer in XTRPlist goes to 0, then 1, then 2, then stops because all of the buffers are now full.  That means BUFFER_MATCH is dropped before the counter delay is ready.  This problem was observed both with the 1 usec delay and the 17 usec, although it was very frequent with the long delay.<p> 
+This problem was not seen at lower rates because even with the 17 usec delay the data must have been sent by XTRPlist before the next buffer came in.  It appears that if we are going to introduce a long artificial delay into the track boards, BUFFER_MATCH will have to be held high until the counter is ready, if it is asserted at the beginning of the event.
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 06:43:16 2001 -->
+<ul> 
+I've taken many runs in the past few hours to test the new debugging trigger table (L2_TORTURE[3,143]), and also to test the new CLIST firmware.  I believe both tests are failures.  First I'll list the runs, vital info, rates and deadtimes, etc, then in the next entry I'll do a multiple paste of all of the captures I've done of the rates and deadtimes.  I would really appreciate it if we could start putting these in the log book.  It would help to keep track of any additional deadtime/rate lost imposed on the system by changing of trigger tables, firmwares, statemachines, etc.  Also - Frank has been questioning me pretty closely as of late about the rates from L2.  I'd personally like some hard evidence to refer to. 
+<br> 
+<listing><font size=+.5> 
+all run with L2_TORTURE[3,143] trigger table.  LA is connected, triggering on MB_DONE_OUT low and START_LOAD high.   
+I've double checked the connections on LA to CLIST and trigger to verify things are set up properly for these tests 
+tests were run with all calorimeter crates 
+<b><font color='red'> 
+RUN	ALPHA	PROM	DEBUG	L1A	L2A	TOTDT	L2DT 
+</font>	 
+126501	cut	6_1(old)200	10	10	--	-- 
+	tag	6_1	200	203	203	99	0 
+</b>    with alpha in cutting, see only 1 event come through on RC gui and rates at 10Hz.   
+    Tagging changes rates to 200 Hz.  I unplugged CLIQUE cable going into CLIST.  minicom shows CLIST 
+    has 0 MB words - but it's okay, I forgot the new debugging only works in cutting mode 
+<b>126503	cut	6_1	200	19314	0	.06	100</b> 
+    started new run with alpha in cutting, old prom, and new debugging mode.  I cannot 
+    get past 1 ev in RC gui.  I've also captured the pictures of Fred Prescaled and L2 from this 
+    run 
+<b>126504	cut	6_1	NONE	203	203	99	0</b> 
+    run with alpha in cutting and no new debugging, to check that I am able to run when I don't  
+    have the new debugging turned on.  Test is positive - so something in the new debugging code 
+    must choke L2 
+<b>126505	cut	8_1(new)NONE	19124	90	1.43	3 
+	cut	8_1	136	19159	97	1.23	5</b> 
+    start run with no debugging to see what rates the new prom will give me by itself.  change 
+    to debugging around 4K events.  appears normal debugging with new prom doesn't have an effect on 
+    rates.  This new prom should still not send anything over MB if EOE isn't found, but it should 
+    start sending data once EOE is found again, putting the system back into sync.  I tried 
+    pulling the cable on CLIST that comes from CLIQUE.  The minicom starts spewing the BC 
+    mismatch errors, as expected.  I put the cable back, and the minicom continues to spew BC errors. 
+    I wait a very long time, (order of minutes) and still, the minicom is spewing.  This would be  
+    an indication to me that the CLIST isn't getting back into sync.  However, LA doesn't trigger?? 
+<b>126506	cut	8_1	136	--	--	--	--</b> 
+    try starting another run, this time with cutting and debugging from the start. 
+    pull cable again.  LA still doesn't trigger, minicom spews BC mismatch errors.  DCAS stops all 
+    clustering (as seen by the loss of many blue flashing lights).  When I replug the cable 
+    still the LA doesn't trigger, the minicom won't stop spewing BC mismatch errors, and still no 
+    clustering resumes.  Somehow it appears the system has gotten into a totally hung state which  
+    needs HRR to fix.  However, where we used to first see 0 MB words errors, then BC errors,  
+    we now only see BC errors in minicom ie - no 0 MB errors.  I change trigger on LA to L1A.  See  
+    most events are empty, so try pulling a cable in DCAS - crate01, slot9, top connector.   
+    This instantly halts the run HRR does not help.  No clustering is occuring. 
+<b>126507 	cut	8_1	136	--	--	--	--</b> 
+    start over with DCAS cable still pulled.  get BC mismatches right away; HRR fixes.   
+    however, clustering again hangs, no flashing lights, unrecoverable 
+<b>126508	cut	8_1	136	--	--	--	--</b> 
+    to make sure there isn't some other problem, I try putting the new prom in backwards,  
+    with the indent facing toward the front of CLIST.  DCAS cable still unplugged.  I did this  
+    just to verify that I had put the prom in correctly the first time, and I do indeed see lots 
+    of errors.  Wonderful.  (because I verified I was doing things right before.  always a good sanity check) 
+<b>126509	cut	6_1(OLD)136	2425	203	90	0 
+	cut	6_1	136	19067	96	1.5	0</b> 
+    I put the old prom back in and ran with and without the DCAS cable unplugged, to make sure 
+    that nothing else was going wrong with the clustering hanging/etc when the new prom 
+    is in place.  The first entry is with the cable unplugged, the second is with the cable  
+    plugged in.  Yes, this is correct.  With the DCAS cable in our L1A rate is a factor of 10 higher 
+    than when it is unplugged.  I actually did this twice, also run 126511, to make sure this was what I was really observing 
+</listing></font> 
+</ul>
+<!-- Author: hray -->
+<!-- Comment: Thu Sep 13 07;13;16 comment by...hray -->
+oh yeah - used 4 L3 farms - 0,4,8,12 (one per output node) to maximize rates, minimize dt from busy/readout
+<!-- Date: Thu Sep 13 06:59:18 2001 -->
+<center><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-241&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-241' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-242&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-242' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-243&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-243' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-244&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-244' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-245&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-245' width='300'></a></center>
+<!-- Author: hray -->
+<!-- Comment: Thu Sep 13 07;01;54 comment by...hray -->
+top row from L to R : 126501 with tagging, 126503 general, 126503 Fred Prescaled.  bottom row from L to R : 126503 L2, 126504
+<!-- Date: Thu Sep 13 07:00:27 2001 -->
+<center><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-246&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-246' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-247&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-247' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-248&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-248' width='300'></a><a href='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-249&button=yes' target='xxx' onclick='jswindow()'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-249' width='300'></a></center>
+<!-- Author: hray -->
+<!-- Comment: Thu Sep 13 07;03;06 comment by...hray -->
+top row from L to R : 126505 with new prom no debugging, 126505 with debugging, 126509 DCAS unplugged, 126509 DCAS plugged in
+
+
+
+<!-- Date: Thu Sep 13 09:04:33 2001 -->
+<ul> 
+Something seems rather fishy about some of these results (ie the 6_1 with no debugging vs 8_1 with no debugging), so I try to reproduce these runs. 
+<br> 
+<listing><font size=+.5> 
+<font color='red'> 
+RUN	ALPHA	PROM	DEBUG	L1A	L2A	TOTDT	L2DT 
+</font> 
+<b>126512	cut	8_1	NONE	19K	100	--	--</b> 
+    able to reproduce rates as seen before for this configuration 
+<b>126513	cut	6_1	NONE	19K	100	--	--</b> 
+    now these rates are the same as 8_1 prom?? try to reset/partition/cs and re-run 
+<b>126515	cut	6_1	NONE	19K	100	--	--</b> 
+    rates are the same as above two runs. so it would appear the first time I took a run with 6_1 
+    and no debugging something was wrong.  Note: the DT for the first run (126504) was very high, all due to busy 
+    the latest runs with no debugging have had close to 0 DT 
+<b>126516	cut	6_1	200	0	0	2	0</b> 
+    with the new debuggging code I again "stick" after taking only 1 event, and have no rates.  A HRR 
+    bumps the L1A up to 19K, but L2A = 0, TOTDT = .05, all from L2.  another HRR gives same resuts 
+    end the run, do a reset/partition/CS and try this new debugging again 
+<b>126517	cut	6_1	200	0	0	2	0</b> 
+    reproduced same result as run 516.  I'm concluding from all of these runs with new debuggging that 
+    something really is wrong with the program 
+<b>126519	cut	6_1	136	19K	100	2	3</b> 
+    on my  quest to reproduce rates, I do see the same results as before with "normal" CLIST debugging mode, 
+    reinforcing my idea that the new debugging in trigger table is not working right 
+<b>126521	cut	8_1	NONE	--	--	--	--</b> 
+    again, trying to reproduce what I've seen earlier today for consistancy check.  I try pulling the grey  
+    connector (rainbow cable) on CLIST that comes from CLIQUE.  Again, I see the clustering <font color='red'>STOP</font>! 
+<b>126523	cut	8_1	136	--	--	--	--</b> 
+    at first see EOE, no errors in minicom, clustering is occuring.  I pull the CLIST braided cable coming 
+    from CLIQUE and clustering STOPS! Minicom shows number of words sent = 0.  DCAS lights no longer flashing 
+ 
+_____________________________________ 
+In Debug Mode. Flag is 136  
+ 
+Error: Clist data has buffer number 1 expected 0 for counter = 2399             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 2000802f 3864401                                                 
+Clist data 1 is 802f 3864401                                                     
+Error: Number of Cluster words sent   is 0                                       
+                                                                              
+                                                                                     
+Error: Clist data has buffer number 1 expected 2 for counter = 2401             
+Number of Clist MBUS words is 0                                                  
+Error: Number of Cluster words sent   is 0    
+___________________________________ 
+ 
+    See no EOE on LA - which is as it should be.  Put cable back and DCAS lights still do not flash.  Clustering is not  
+    resumed.  LA sees a few spurious EOE signals, and then no more.  The minicom now reads: 
+ 
+____________________________________ 
+Error: Clist data has buffer number 1 expected 3 for counter = 2494             
+Number of Clist MBUS words is 0                                                 
+                                                                                
+                                                                                    
+Error: Clist data has buffer number 3 expected 0 for counter = 2495             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 2000802f 7864401                                                 
+Clist data 1 is 802f 7864401                                                    
+                                                                                
+                                                                                    
+Error: Clist data has buffer number 3 expected 1 for counter = 2496             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 2000802f 7864401                                                 
+Clist data 1 is 802f 7864401  
+ 
+-------I waited awhile------------- 
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 2776             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 2000802f 7864401                                                 
+Clist data 1 is 802f 7864401                                                     
+Stop or Recover stateStop or Recover stateFirst Event Started   
+__________________________________ 
+ 
+    I did a HRR and this began clustering again fine.  No more errors were reported in minicom, see EOE in LA. 
+<b>126524	cut	6_1	136	--	--	--	--</b>   
+  put system back into orignal configuration.  this time, when I pull the cable I still see the DCAS flashing lights stop,  
+    and I get these messages in the minicom: 
+ 
+__________________________________ 
+In Debug Mode. Flag is 136                                                               
+                                                                                         
+                                                                  
+Error: Clist data has buffer number 1 expected 0 for counter = 6262             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 20248000 3a58401                                                 
+Clist data 1 is 248000 3a58401                                                   
+Error: Number of Cluster words sent   is 0                                       
+                                                                                 
+                                                                                  
+Error: Clist data has buffer number 1 expected 2 for counter = 6264             
+Number of Clist MBUS words is 0                                                  
+                                                                                 
+                                                                                  
+Error: Clist data has buffer number 3 expected 0 for counter = 6266             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 20248000 7a58401                                                 
+Clist data 1 is 248000 7a58401  
+____________________________________ 
+ 
+    Again, there is no EOE in LA.  Then I plug the cable back in: 
+____________________________________ 
+Error: Clist data has buffer number 3 expected 1 for counter = 6767             
+Number of Clist MBUS words is 1                                                  
+Clist data 0 is 20248000 7a58401                                                 
+Clist data 1 is 248000 7a58401                                                   
+Stop or Recover stateStop or Recover stateFirst Event Started  
+_____________________________ 
+ 
+    the DCAS lights still don't flash, but this time I see many many EOE occuring on LA 
+    as if clustering were still occuring, or we had a lot of events stored in some mysterious very very long pipeline?? 
+</font></listing> 
+<br> 
+so, to summarize:  the new debugging doesn't appear to work.  the new prom doesn't appear to put the system back into sync.  new odd situation of grey cable unplugged/DCAS no longer clustering 
+ 
+</ul>
+<!-- Author: hray -->
+
+
+<!-- Date: Thu Sep 13 09:24:26 2001 -->
+<pre>The above detailed notes are very useful for understanding what 
+is going on. I would conclude that the tests were successful, 
+although there are some additional tests to be made. 
+ 
+1. The new debugging mode (debug flag of 200) will accept the 
+first 10 events, and then reject all events until there is an 
+error. It should then accept all events up to 10 past when 
+the last error was found. The screen shot for this test does show  
+L2 rejecting all events at a rate of 19Khz. It only shows 1 L2A. 
+Either the code really only accepted the first event or that 
+number was not updated since there had been only 10 L2A total. 
+We still need to verify whether the code starts accepting  
+events once there is an error. 
+(The purpose of this code is to make it easier to get to the 
+events with errors. This is to solve the L2 streaming/look area/ 
+tape handling/ data access problem. ) 
+ 
+2. The new Clist firmware at least works when there are no  
+errors. Sync errors were still reported because the L2 buffer 
+bits from Clique are also in a fifo, so they would be out of  
+sync. Monica is making changes to the Clique firmware to  
+handle this and also to hopefully fix the basic problem of 
+Clique not sending the EOE bit in the first place.  Thus the 
+new Clist firmware is a necessary but not sufficient fix. 
+ 
+</pre>
+<!-- Author: Stephen -->
+
+
+<!-- Date: Thu Sep 13 11:59:39 2001 -->
+<center><a href='/elog/notebooks/l2/Thu_Sep_13_2001_115812.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-251' ></a><a href='/elog/notebooks/l2/Thu_Sep_13_2001_115824.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-253' ></a></center>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 12:10:13 2001 -->
+Screen captures from the LA triggering on START_LOAD low and XTRPlist MOD_DONE high.  The system configuration was: L2_RATE_TEST[2,143] with the alpha cutting; L1GLOBAL, L2DEC (L1in and XTRPlist only), SVT06-07 (3 or 5 fake tracks/event), SCALERS, and XTRP (fake track pattern).  L1A = 17 kHz, L2A = 1.7 Hz.  XTRPlist timed out on the fourth event after each activate.  The POD pins are: 
+<p><TABLE border> <TR><TH>XTRPlist 
+signal</TH><TH>POD1 pin</TH></TR> 
+<TR><TD>START_LOAD_CLEAN</TD><TD>0</TH></TR> 
+<TR><TD>WE_ARE_BOSS</TD><TD>1</TD></TR> <TR><TD>FIF_RD_A</TD><TD>2</TD></TR> 
+<TR><TD>FIF_RD_B</TD><TD>3</TD></TR> 
+<TR><TD>FIF_RD_C</TD><TD>4</TD></TR> 
+<TR><TD>FIF_RD_D</TD><TD>5</TD></TR> 
+<TR><TD>BUFF_REQ0</TD><TD>6</TD></TR> 
+<TR><TD>BUFF_REQ1</TD><TD>7</TD></TR> 
+<TR><TD>BUFFER_MATCH</TD><TD>8</TD></TR> 
+<TR><TD>L1A</TD><TD>9</TD></TR> 
+<TR><TD>L1BUFF0</TD><TD>10</TD></TR> 
+<TR><TD>L1BUFF1</TD><TD>11</TD></TR> 
+<TR><TD>SOMEONE_VALID</TD><TD>12</TD></TR> 
+<TR><TD>FIFO_EF</TD><TD>13</TD></TR> 
+<TR><TD>BUF0 (front panel)</TD><TD>14</TD></TR> 
+<TR><TD>BUF1 (front panel)</TD><TD>15</TD></TR> 
+</TABLE BORDER><p> 
+All POD pins are from the XTRPlist FPGA except where noted.  The plot on the left is all 4 events before the timeout.  The right plot focuses on the hung event.  
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 12:43:59 2001 -->
+<center><a href='/elog/notebooks/l2/Thu_Sep_13_2001_124334.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-255' ></a><a href='/elog/notebooks/l2/Thu_Sep_13_2001_124342.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-257' ></a></center>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 12:48:23 2001 -->
+The above plots are from the next run with exactly the same configuration.  The only change is that the POD1 pins for FIF_RD_[A:D] have been replaced by VALID[0:3], respectively.  The left plot has the three START_LOADs before the XTRPlist board timed out and the entire timeout event.  The right plot focuses on only the beginning of the START_LOAD where XTRPlist timed out.
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 15:19:14 2001 -->
+<center><a href='/elog/notebooks/l2/Thu_Sep_13_2001_151837.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-259' ></a><a href='/elog/notebooks/l2/Thu_Sep_13_2001_151854.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-261' ></a></center>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 15:37:04 2001 -->
+The above plots are from a run with the same configuration as the previous.  XTRPlist failed to send any magic bus words on the 4th START_LOAD.  The only changes to the POD1 pins are: pin 12 = EE_WRITE and pin 13 = DS1, both on the tracklist FPGA.  The plot on the left shows the entire bad event.  The plot on the right zooms in on the 3 DSes.  The timing of the events are as follows: 
+<p><TABLE BORDER> 
+<TR><TD>L1A</TD><TD>L1A going high to EE_WRITE going low </TD><TD>EE_WRITE going low to first DS going low</TD><TD>last data DS going low to ee DS going low</TD><TD>EE_WRITE going high to ee DS going low</TD><TD>front panel buffer change to ee DS going high</TD><TD>front panel buffer latched</TD></TR> 
+<TR><TD>1</TD><TD>1.4 us</TD><TD>80 ns</TD><TD>2.6 us</TD><TD>100 ns</TD><TD>3.7 us</TD><TD>0</TD></TR> 
+<TR><TD>2</TD><TD COLSPAN=4>Only EE information was sent, which took 4.5 us from L1A to ee DS</TD><TD>128 ns</TD><TD>1</TD></TR> 
+<TR><TD>3</TD><TD>1.4 us</TD><TD>94 ns</TD><TD>2.5 us</TD><TD>86 ns</TD><TD>122 ns</TD><TD>2</TD></TR> 
+</TABLE BORDER>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 15:42:54 2001 -->
+<table><tr><td><a href=/elog/notebooks/l2/Thu_Sep_13_2001_154242.ps align=top><img src=/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-263  align='top'></td><td>run 126604</a></td></tr></table>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 15:50:07 2001 -->
+As a point of reference, for an event that XTRPlist sent its data (shown above) the timing was: 
+<p><TABLE BORDER> <TR><TD>L1A</TD><TD>L1A going high to EE_WRITE going low 
+</TD><TD>EE_WRITE going low to first DS going low</TD><TD>last data DS going low to ee DS 
+going low</TD><TD>EE_WRITE going high to ee DS going low</TD><TD>front panel buffer 
+change to ee DS going high</TD><TD>front panel buffer latched</TD></TR> 
+<TR><TD>1</TD><TD>1.4 us</TD><TD>82 ns</TD><TD>2.4 us</TD><TD>90 
+ns</TD><TD>3.3 us</TD><TD>0</TD></TR> 
+</TABLE BORDER>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 19:03:06 2001 -->
+<center><a href='/elog/notebooks/l2/Thu_Sep_13_2001_190219.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-265' ></a><a href='/elog/notebooks/l2/Thu_Sep_13_2001_190242.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-267' ></a></center>
+<!-- Author: Matt -->
+
+
+<!-- Date: Thu Sep 13 20:02:52 2001 -->
+The above plots are from runs with L2_TORTURE[3,143] and the alpha cutting.  The crates included are CCAL00-15, L1/L2CAL, L1GLOBAL, L2DEC, SVT06-07, and XTRP.  SVT and XTRP are passing fake tracks to L2.  The LA pins are as follows (all signals from FPGA unless otherwise noted): 
+<p><TABLE border> 
+<TR><TH>XTRPlist signal</TH><TH>LA pin</TH></TR> <TR><TD>START_LOAD_CLEAN</TD><TD>POD1 0</TH></TR> 
+<TR><TD>WE_ARE_BOSS</TD><TD>POD1 1</TD></TR> 
+<TR><TD>VALID0</TD><TD>POD1 2</TD></TR> 
+<TR><TD>VALID1</TD><TD>POD1 3</TD></TR> 
+<TR><TD>VALID2</TD><TD>POD1 4</TD></TR> 
+<TR><TD>VALID3</TD><TD>POD1 5</TD></TR> 
+<TR><TD>BUFF_REQ0</TD><TD>POD1 6</TD></TR> 
+<TR><TD>BUFF_REQ1</TD><TD>POD1 7</TD></TR> 
+<TR><TD>BUFFER_MATCH</TD><TD>POD1 8</TD></TR> 
+<TR><TD>L1A</TD><TD>POD1 9</TD></TR> 
+<TR><TD>L1BUFF0</TD><TD>POD1 10</TD></TR> 
+<TR><TD>L1BUFF1</TD><TD>POD1 11</TD></TR> 
+<TR><TD>EE_WRITE</TD><TD>POD1 12</TD></TR> 
+<TR><TD>DS1</TD><TD>POD1 13</TD></TR> 
+<TR><TD>BUF0 (front panel)</TD><TD>POD1 14</TD></TR> 
+<TR><TD>BUF1 (front panel)</TD><TD>POD1 15</TD></TR> 
+<TR><TD>NEXT_FILL0</TD><TD>LAB2 0</TD></TR> 
+<TR><TD>NEXT_FILL1</TD><TD>LAB2 1</TD></TR> 
+</TABLE BORDER><p> 
+The <b>left plot</b> was triggered on the first START_LOAD going low after an activate.  START_LOAD goes low after a L1A for buffer 0, with the alpha requesting buffer 0.  This is a long START_LOAD because the alpha is printing information to the minicom.  During this START_LOAD, the next three L1A come in for buffers 1-3 in that order.  The data is latched into VALID3-0, in that order, by the end event DS.  XTRPlist correctly takes BOSS about 17us after START_LOAD goes low and presumably sends its data.<p> 
+At this point, all buffers on XTRPlist are marked as VALID, and won't be cleared until the next L1A for that buffer, even if the data is requested by the alpha and sent.  This is because the SVT VME readout, which doesn't happen until a L2A, also needs to know which buffers are valid.  However, the NEXT_FILL signal, which determines into which buffer on the XTRPlist board to latch the next data, does not update after the 4th end event DS (bottom right of the plot) because all buffers are already full.  If any one buffer is empty when the DS is clocked, NEXT_FILL will be set to write the next data to that buffer.<p>  
+The error is that now when the next L1A arrives with a different buffer, it will be written over the previous XTRPlist buffer because NEXT_FILL never updated.  In this case whatever buffer arrives next will be written over buffer three.  Then, the next time the alpha asks for buffer 3, XTRPlist will think that it doesn't have it and time out.  This should happen in any condition where the rate is high enough to fill all four buffers before the alpha requests another one.  This also explains why we have seen behavior <a href= 
+'/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=19&frame=2&anchor=07:19:05'>previously</a> where the XTRPlist board was timing out every 4th START_LOAD.  Each time the XTRPlist board forces the alpha to time out, all of the XTRPlist buffers get full again, and the same overwriting problem occurs.<p> 
+The <b>right plot</b> is triggered on the second START_LOAD low.  It shows the results of buffer three being overwritten.  The alpha requests buffers 1 and 2, and they are sent by XTRPlist.  However, the next L1A came in with buffer 0, clearing VALID3, but it was latched into VALID0, overwriting buffer 3, because NEXT_FILL was still set to write to VALID0.  Then when the alpha requested buffer 3, XTRPlist did not have a BUFFER_MATCH, and did not send any data.<p> 
+On solution is to also have NEXT_FILL look for an open XTRPlist buffer on the same L1A that clears one of the VALID buffers.  Then NEXT_FILL should always see at least one open buffer to point to when the next end event DS is asserted.
+<!-- Author: Jane and Matt -->
+
+
+<!-- Date: Fri Sep 14 10:11:57 2001 -->
+<ul> 
+Took a few runs this am with new CLIST prom 091301 version, in conjunction with CLIST 8_1_sync prom.  These should help the sync error.  I also took one run with the debug mode in 200 again to test the software for Stephen 
+<br> 
+Results: 
+<br> 
+These first two runs were taken with L2_TORTURE[3,143], 4 L3 farms, debug mode 136, alpha in cutting 
+<li><b>126672</b> : run just to make sure two new proms weren't going to do something horrid.  DT 2%, 2% from L2, L1A 18K, L2A 88Hz.  See one BC mismatch error - probally false sync, but we should check it out 
+<li><b>126673</b>: pull cable on CLIST side, put it back in, see EOE signals sent again but no lights flashing in L2CLxx crates.  Minicom spews bc errors.  do HRR and clustering resumes.  Pull cable from CLIQUE side.  when I plug the cable back in I again see EOE signals on LA but no lights.  DCAS has HV and D/P* lit only, LOCOS has HV, CLK, PASS_ON lights steady only, CLIQUE has HV, CLK, and ALIVE flashing.  do HRR and get signals back. 
+See below LA plots of before and after cable pull and HRR.   
+<br> 
+<br> 
+For this next run I changed to L2Rate[2,143] (I wasn't sure if it would give me a much higher rate, and I was going to try to run on the sly and hope the true sync error would show up before anyone noticed I had kept the system longer than my alloted half hour) 
+<li><b>126674</b>: DT 2% with 1% from L2, L1A = 18K, L2A = 117Hz.  Around 11K I saw this error of one BC mismatch in minicom window, which recovers itself. Again, worth looking at with validation code.  End run b/c Stephen calls to request another run with new debugging 
+<br> 
+<br> 
+Change back to L2_TORTURE[3,143] 
+<li><b>126675</b> : debug mode 200.  get 1 event in RC gui.  events stop coming in (L3 not doing anything) but clustering continues happily as indicated by flashing blue lights.  Pull cable.  RC goes to 110 events.  Put cable back and RC continues to collect events.  At 190 ev I issue a HRR.  It goes to 204 ev then no more are accepted.  So, it would appear that the code does indeed only accept ~1-10 ev before it stops and waits for the error, then it collects the 10 events after the error - but then it appears to continue to collect events? 
+<br> 
+<br> 
+<listing><font size=+.5> 
+So, for this last run:  I pull the cable 
+______________________________________________ 
+In Debug Mode. Flag is 200                                         
+ 
+Error: Clist data has buffer number 1 expected 0 for counter = 683820           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 3a72001                                  
+Clist data 1 is 8082 3a72001                                                                                                        
+ 
+Error: Clist data has buffer number 3 expected 2 for counter = 683822           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 7a72001                                   
+Clist data 1 is 8082 7a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 0 for counter = 683825          
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 7a72001                                 
+Clist data 1 is 8082 7a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683826          
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 7a72001                                  
+Clist data 1 is 8082 7a72001                                                                                                        
+ 
+Error: Clist data has buffer number 3 expected 2 for counter = 683828          
+Number of Clist MBUS words is 1                                  
+Clist data 0 is 20008082 7a72001                                   
+Clist data 1 is 8082 7a72001                                                                                                        
+ 
+Error: Clist data has buffer number 1 expected 0 for counter = 683829           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 3a72001                                
+Clist data 1 is 8082 3a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683831  
+Number of Clist MBUS words is 1                                   
+Clist data 0 is 20008082 7a72001                                   
+Clist data 1 is 8082 7a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 2 for counter = 683832           
+Number of Clist MBUS words is 1                                   
+Clist data 0 is 20008082 7a72001                                
+Clist data 1 is 8082 7a72001                                                                                                        
+ 
+Error: Clist data has buffer number 0 expected 3 for counter = 683833           
+Number of Clist MBUS words is 1                                 
+Clist data 0 is 20008082 1a72001                                   
+Clist data 1 is 8082 1a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 0 for counter = 683834           
+Number of Clist MBUS words is 1                                  
+Clist data 0 is 20008082 7a72001                                  
+Clist data 1 is 8082 7a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683835           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 7a72001                                  
+Clist data 1 is 8082 7a72001                                                                                                         
+ 
+Error: Clist data has buffer number 0 expected 2 for counter = 683839          
+Number of Clist MBUS words is 1                                   
+Clist data 0 is 20008082 1a72001                                  
+Clist data 1 is 8082 1a72001                                                                                                         
+____________________________________________ 
+ 
+After 12 events were collected in minicom window, then we see 0 words starting to be sent out (note,  
+in this run and the previous runs where I pulled the cable, when 0 MB words were sent out CLIST buffer number  
+was stuck at 3.  Previously I've seen the whole range of buffer numbers for CLIST. 
+_____________________________________________ 
+ 
+Error: Clist data has buffer number 3 expected 0 for counter = 683840          
+Number of Clist MBUS words is 1                                   
+Clist data 0 is 20008082 7a72001                                  
+Clist data 1 is 8082 7a72001                                    
+Error: Number of Cluster words sent   is 0                      
+Error: Number of Cluster words sent   is 0                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683842           
+Number of Clist MBUS words is 0                               
+Error: Number of Cluster words sent   is 0    
+ 
+Error: Clist data has buffer number 3 expected 2 for counter = 683843          
+Number of Clist MBUS words is 0                                 
+Error: Number of Cluster words sent   is 0                                                                                           
+ 
+Error: Clist data has buffer number 3 expected 0 for counter = 683844           
+Number of Clist MBUS words is 0                                    
+Error: Number of Cluster words sent   is 0                  
+Error: Number of Cluster words sent   is 0                                                                                           
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683846           
+Number of Clist MBUS words is 0                                   
+Error: Number of Cluster words sent   is 0                         
+____________________________________________ 
+ 
+then words start being sent out again.  while this is a small 
+sampling of what was seen on the minicom, the majority (I would say > 98%) were CLIST buffer 3 still                                                                                                                                     
+____________________________________________ 
+ 
+Error: Clist data has buffer number 2 expected 3 for counter = 683901           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 5a72001                                  
+Clist data 1 is 8082 5a72001                                                                                                         
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683902           
+Number of Clist MBUS words is 1                                   
+Clist data 0 is 20008082 7a72001                                   
+Clist data 1 is 8082 7a72001                                                                                                       
+ 
+Error: Clist data has buffer number 3 expected 0 for counter = 683904           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 7a72001                            
+Clist data 1 is 8082 7a72001    
+ 
+Error: Clist data has buffer number 3 expected 0 for counter = 683909           
+Number of Clist MBUS words is 1                                    
+Clist data 0 is 20008082 7a72001                                   
+Clist data 1 is 8082 7a72001                                       
+Error: Number of Cluster words sent   is 0                         
+______________________________________________ 
+ 
+then the same pattern of no MB words, then some MB words, all 
+with CLIST buffer 3 bc mismatches, repeats until I HRR. 
+______________________________________________ 
+                                                                  
+Error: Clist data has buffer number 3 expected 2 for counter = 683910           
+Number of Clist MBUS words is 0                                   
+Error: Number of Cluster words sent   is 0                       
+Error: Number of Cluster words sent   is 0                                                                                                                                                             
+ 
+Error: Clist data has buffer number 3 expected 1 for counter = 683912          
+Number of Clist MBUS words is 0                                  
+Error: Number of Cluster words sent   is 0  
+</listing></font> 
+</ul>  
+<!-- Author: hray -->
+
+
+<!-- Date: Fri Sep 14 10:12:56 2001 -->
+<center><a href='/elog/notebooks/l2/Fri_Sep_14_2001_101215.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-269' ></a><a href='/elog/notebooks/l2/Fri_Sep_14_2001_101225.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-271' ></a><a href='/elog/notebooks/l2/Fri_Sep_14_2001_101231.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-273' ></a><a href='/elog/notebooks/l2/Fri_Sep_14_2001_101238.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-275' ></a></center>
+<!-- Author: hray -->
+<!-- Comment: Fri Sep 14 10;18;31 comment by...hray -->
+<pre>Run 126673:
+Left plot = before cable was pulled
+Middle plot = with cable pulled from CLIQUE side
+Right plot = after I reconnect the cable but before HRR (no flashing lights)
+Bottom plot = after HRR when lights flash again
+
+From CLIST:
+0=L1A, 1=HLNK_LE0, 2=EOE, 3=RCLK, 4=FIFO_EMPTY*, 5=LOC_REQ, 6=DSTROBE*,7=DDONE*, 8=LOC_BOSS,
+9=MB_DONE_OUT, 10=CLIQUE_END, 11=CLIQUE_BUF0, 12=CLIQUE_BUF1, 13=WCLK, 14=WEN0, 15=STARTLOAD* from
+CLIST,
+
+a cursory glance shows things appear to still be clustering after the cable is plugged back in</pre>
+
+
+<!-- Date: Fri Sep 14 13:13:09 2001 -->
+<pre>L2 Meeting Wed. Sept. 12 
+ 
+Clist tests - Heather will test new firmware  
+ 
+L1 error - Does it exist? at what level?  
+  Proposals to check it 
+    1. An inclusive run of 1M events with all data going to the 
+         look area 
+    2. Download the L1 bitmask into the alpha and check for  
+       events where bits are set that never should be. 
+    3. Take the cables that carry the L1 bits to the SVT and  
+      plug them into the upper 64 bits of the L1 board. This 
+     would mean dropping the SumEt, MET data. (Also there is a  
+    dip switch on that board to enable the uppermost  32 bits). 
+ 
+Auto-HRR: There was a meeting of the experts. The simplest plan 
+  on the alpha detecting an error is to simply stop sending 
+  any decisions to the TS. The TS will timeout in 8 seconds 
+  after which an automatic HRR will be sent. There needs to 
+  be TS firmware changes/fixes to actually do this. 
+ 
+Jet trigger code - Data is being looked at to validate this  
+     trigger's performance. 
+ 
+XTRP is closer to having the problem solved. If L2 Readout is 
+     turned off, then no sync errors are observed.</pre>
+<!-- Author: Stephen -->
+
+
+<!-- Date: Sat Sep 15 12:12:18 2001 -->
+<ul> 
+Oh, it's been quite an eventful morning here at ground zero.  I had taken three runs with over 1 million events and no sync errors.  Then L3 died on CS and they needed to come in and fix stuff and restart CSL.  Then, when I vowed I would do one more run of 1M then admit the system has defeated me - VOILA! I had the sync error.  Of course, as Murphy's law dictates, I only managed to capture 3 of the 4 vital LA shots, hitting RUN instead of PRINT for the last and of course most important LA screen. 
+<br> 
+<br> 
+<listing><font size=+.5> 
+<font color='red'> 
+RUN	PROM	ALPHA	DEBUG	L1	L2	DT	TABLE  
+</font> 
+<b>126717	new	tag	136	150H	150H	~0 	Phys_0_01[24,174]</b> 
+	Had errors last night with Alpha no longer processing at spot 61, so I thought I'd try a quick run to  
+	see if I could reproduce them.  Nope - all ran well.  
+<b>126719	new	cut	136	30K	800H	High	L2TORTURE[3]</b> 
+	get one buffer mismatch with CLIST sending out one word (not a 0 MB word error) - then that's it.  do HRR.   
+	get a lot of deadtime, system is overloaded.  end to change back to physics table 
+ 
+I decide that I would put the old proms back in, and use Phys_0_01[24,174], and reproduce the sync  
+error with the old configuration.  No EOE/PASS_DONE could come from two places.  Monica wanted me  
+to check out the other way in which things could fail (aside from faulty switch register) = look  
+at CRATE_SEL and SEED_SEL traces. 
+ 
+The following runs were taken with Physics_0_01[24,174] and 6 L3 farms 
+ 
+<b>126727	old	cut	136	300H	300H	70% (70 TSI 30RO)</b> 
+	changed L1JET5 trigger PS to 1.  Got one error - CLIST number of MB words was 2, Buffer mismatch 
+	this didn't trigger the LA.  Ran for 1.45 MILLION events and didn't see the sync error.  
+	end to try again hoping that restarting might make the error occur  
+<b>126734	old	cut	136	--	--	--	--</b> 
+	end at 1 MILLION  events, see no errors at all in minicom  or on LA.  Called Stephen and he suggests changing PS at L2  
+<b>126738	old	cut	136	900H	200H	~0	--</b> 
+	change L2JET5->10, L2JET40->10, L2L1EM8->10, as these were the triggers at L2 with highest rates.   
+	it was around 9:30 am by this point, so I called Matt (TrigMon wouldn't start - couldn't find an executable).  
+	Got TrigMon running.  as expected, see cluster merging problem.  Don't see any mismatches in 
+	L1 bits.  See something slightly odd - on the Ntowers plot, the plot is a diagonal,  
+	but it's shifted up by one (as it is  on all of these runs).  That means TC2D always says it has 
+	one more tower than TL2D thinks it has?  Is this just an artifact of the CLIST cluster word change? 
+	get BTO from TSI00 at 773K.  HRR.  Then get the big red and orange gui that pops up saying Scanner  
+	Manager error - end and cleanup EVB.  I do so.  L3 then will not pass CS for two times. 
+	I page L3.  Boris has to come in and fix things and restart CSL.  (first the relay in L3 died, then CSL had issues) 
+<b>126758	old	cut	136	800H	200H	~0	--</b> 
+	Here's the winner!  at 115K see the SYNC ERROR!  Now here's where Murphy's law came in. 
+	I captured the trigger top and bottom of all 32 traces on LA.  I captured the top of the event 
+	before trigger on LA.  I tried to capture the bottom, and most important part of the event 
+	before trigger and I hit RUN instead of PRINT on the damned screen.  I had nothing else to do but 
+	HRR and hope for the best.  End run around 200K with TSI BTO again.  Get SM error again. Cleanup EVB again. 
+<b>126762	old	cut	136	800H	200H	--	--</b> 
+	BTO at 20K from CCAL.  HRR fixes.  then...SYNC ERROR AGAIN!! around 170K. this time I managed to capture  
+	the plots.  see below.  end run and put in new proms 
+ 
+		 
+	 
+ 
+ 
+</font> 
+</listing> 
+</ul>
+<!-- Author: hray -->
+
+
+<!-- Date: Sat Sep 15 12:19:31 2001 -->
+<center><a href='/elog/notebooks/l2/Sat_Sep_15_2001_121844.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-277' ></a><a href='/elog/notebooks/l2/Sat_Sep_15_2001_121901.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-279' ></a><a href='/elog/notebooks/l2/Sat_Sep_15_2001_121911.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-281' ></a></center>
+<!-- Author: hray -->
+<!-- Comment: Sat Sep 15 12;27;57 comment by...hray -->
+plot on L is of event before trigger.  Plot in middle is event that triggered sync loss.  plot on R is middle plot (ie sync loss) at an expanded view so you can see the full picture of the lines pulled
+<!-- Date: Sat Sep 15 12:23:28 2001 -->
+<center><a href='/elog/notebooks/l2/Sat_Sep_15_2001_122255.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-283' ></a><a href='/elog/notebooks/l2/Sat_Sep_15_2001_122306.ps'><img src='/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-285' ></a></center>
+<!-- Author: hray -->
+<!-- Comment: Sat Sep 15 12;43;17 comment by...hray -->
+<pre>plot on L is bottom of event before sync trigger.  plot on R is bottom of event that triggered sync loss.  Traces are as follows:
+
+From CLIST:
+0=L1A, 1=HLNK_LE0, 2=EOE, 3=RCLK, 4=FIFO_EMPTY*, 5=LOC_REQ, 6=DSTROBE*,7=DDONE*, 8=LOC_BOSS,
+9=MB_DONE_OUT, 10=CLIQUE_END, 11=CLIQUE_BUF0, 12=CLIQUE_BUF1, 13=WCLK, 14=WEN0, 15=STARTLOAD* from
+CLIST
+
+From CLIQUE:
+16=L1A, 17=START_PASS, 18=SEED_REQ, 19=ERASE_CLUSTER, 20=CR_SEL1,
+21=CR_SEl2, 22=CR_SEL3, 23=CR_SEL4, 24=CR_SEL5, 25=CR_SEL6, 
+26=SEED_SEL1, 27=SEED_SEL2, 28=SEED_SEL3, 29=SEED_SEL4,
+30=SEED_SEL5, 31=SEED_SEL6</pre>
+<!-- Date: Sat Sep 15 12:25:59 2001 -->
+<table><tr><td><a href=/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-286&button=yes target='xxx' onclick='jswindow()'; align=top><img src=/cgi/elog/det-system-elog.pl?nb=l2&action=view&page=-286  width='300' align='top'></td><td>trigmon plot from one of the last runs - just to show we still have the seed eta off by 8 or 16 problem, and to show the ntowers shifted up by one </a></td></tr></table>
+<!-- Author: hray -->
+
+
+
+
+<!-- Date: Sat Sep 15 12:57:48 2001 -->
+<ul> 
+I tried to start a run to find sync error with new proms.  Remember - they ran fine together all day yesterday with Cosmics and last night (for the most part) until I saw alpha no longer processing at spot 61 errors and clusters>2500.  We've seen this before, though, so I don't think it's due to the new proms. 
+For all 4 of these runs I saw the same problem: get 0 words on MB or BC mismatches right from the start.  The only thing that changed between these runs was the chips.  Run 126770 was the first.  Ended and did reset/partition/checked proms were in correctly.  Run 126772 end and reseat both boards.  Run 126774 end and power cycle both l2de and l2cl00 crates.  Run 126775 - I still see this problem.  I've been here for 8 hours now straight, so I'm going to go eat and take a break.  I'll probally come back later and try to put the new proms in.  If not, I'll be in at 8 am tomorrow for another thrilling day of struggling with the system. 
+</ul>
+<!-- Author: hray -->
+
+
+<!-- Date: Sat Sep 15 12:59:05 2001 -->
+<pre>oops - the minicom stuff is below for the last run, 126775.  I tried several HRR but they didn't help. 
+ 
+In Debug Mode. Flag is 136  
+Error: Number of Cluster words sent   is 0  
+                                            
+Error: Clist data has buffer number 0 expected 1 for counter = 0               
+Number of Clist MBUS words is 6  
+Clist data 0 is b01c9021 80042440  
+Clist data 1 is 901c9021 42440   
+Clist data 2 is a00b800f 878800   
+Clist data 3 is 800b800f 80878800       
+Clist data 4 is b0129025 80891c42      
+Clist data 5 is 90129025 891c42 
+Clist data 6 is b01c902b 842441  
+Clist data 7 is 901c902b 80842441 
+Clist data 8 is b04c9007 808a4840   
+Clist data 9 is 904c9007 8a4840   
+Clist data 10 is b0439008 189d443   
+Clist data 11 is 90439008 8189d443 
+                     
+Error: Clist data has buffer number 0 expected 1 for counter = 8  
+Number of Clist MBUS words is 1      
+Clist data 0 is a02f8003 81830440 
+Clist data 1 is 802f8003 1830440 
+Stop or Recover stateStop or Recover stateFirst Event Started   
+ 
+In Debug Mode. Flag is 136       
+Error: Number of Cluster words sent   is 0         
+Stop or Recover stateStop or Recover stateFirst Event Started  
+                                                            
+In Debug Mode. Flag is 136               
+Error: Number of Cluster words sent   is 0   
+Stop or Recover stateStop or Recover state   
+                                                          
+Error: Clist data has buffer number 0 expected 1 for counter = 1   
+Number of Clist MBUS words is 3        
+Clist data 0 is afff801a 80060440 
+Clist data 1 is 8fff801a 60440 
+Clist data 2 is afff801a 860440     
+Clist data 3 is 8fff801a 80860440    
+Clist data 4 is b0729018 818bb442        
+Clist data 5 is 90729018 18bb442 </pre>
+<!-- Author: hray -->
+
+
+<!-- Date: Sun Sep 16 14:58:46 2001 -->
+Tracklist tests:<p> 
+Configuration: L2_TORTURE[3,143]<br> 
+all CCAL, L1/L2CAL, FRED, L2 (with L1int and XTRPlist only), SVT06-07, XTRP and SCALERS<br> 
+XTRPlist firmware: tib_v1_15sept01_c<br> 
+<b>Run 126887</b>  tagging, L1A = 255 Hz; only ee from XTRP.  XTRPlist in sync for entire run; L1int data is fine; 175k events.<br> 
+<b>Run 126888</b>  tagging, L1A = 255 Hz; fake track pattern from XTRP (extra 1 = 1); XTRPlist in sync for entire run; L1int data is fine; 93k events.<br> 
+<b>Run 126889</b>  cutting, L1A = 32kHz, L2A = 50 Hz; fake tracks from XTRP; XTRPlist in sync for entire run; 32.6M L1A, 50k L2A.<br> 
+<b>Run 126890</b>  cutting.  Added SVTlist board with new firmware.  SVTlist sent 842 words/event and timed out the alpha.  Did not have time to study in detail as shot setup underway.
+<!-- Author: Matt and Liz -->
