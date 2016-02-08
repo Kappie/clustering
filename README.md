@@ -4,7 +4,7 @@ Thanks Davy Landman for the parallel ncd script. [ncd](https://github.com/DavyLa
 
 ## Steps to clustering data files
 
-Put all your data items in one folder. My examples are in `data`.
+Put all your data items in one folder, called `my_example` below. For examples of data that can be clustered, see the folder `data`.
 
 Create a distance matrix with:
 
